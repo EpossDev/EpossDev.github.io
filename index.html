@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MisterX IRL</title>
+    <link rel="stylesheet" href="assets/scripts/style.css">
+</head>
+<body>
+
+    <h1>Bienvenue sur le Tableau de Bord du Mister X IRL</h1>
+
+    <div class="div-title">
+        <h1>Instructions de Jeu 🔽</h1>
+    </div>
+
+    <div class="div-section">
+        <h2 id="roundNumberTitle">Tour N°</h2>
+        <div class="roundInstructionsContainer">
+            
+        </div>
+        <button id="previousRoundButton" class="roundButton" onclick="previousRound()">Précédent</button>
+        <button id="nextRoundButton" class="roundButton" onclick="nextRound()">Suivant</button>
+    </div>
+
+    <div class="div-title">
+        <h1>Début de partie 🔽</h1>
+    </div>
+
+    <div class="div-section">
+        <div class="baseLocalisations">
+            <h3>Mister X</h3>
+            <p>Position:</p>
+            <button id="numberGenerator1" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
+        </div>
+        <div class="baseLocalisations">
+            <h3>Équipe 1</h3>
+            <p>Position:</p>
+            <button id="numberGenerator2" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
+        </div>
+        <div class="baseLocalisations">
+            <h3>Équipe 2</h3>
+            <p>Position:</p>
+            <button id="numberGenerator3" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
+        </div>
+        <div class="baseLocalisations">
+            <h3>Équipe 3</h3>
+            <p>Position:</p>
+            <button id="numberGenerator4" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
+        </div>
+        <div class="baseLocalisations">
+            <h3>Équipe 4</h3>
+            <p>Position:</p>
+            <button id="numberGenerator5" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
+        </div>
+    </div>
+
+    <div class="div-title">
+        <h1>Générateur de phrases pour Discord 🔽</h1>
+    </div>
+
+    <div class="div-section">
+
+        <section class="section-all" id="cardinalIndex">
+            <h2>Déplacement de Mister X vers un point cardinal</h2>
+            <div class="section-div">
+            <p>L'Équipe Mister X s'est déplacée vers </p>
+            <select name="Cardinal" id="cardinalSelect">
+                <option value="team1">le Nord ⬆️</option>
+                <option value="team1">le Nord-Est ↗️</option>
+                <option value="team1">l'Est ➡️</option>
+                <option value="team1">le Sud-Est ↘️</option>
+                <option value="team1">le Sud ⬇️</option>
+                <option value="team1">le Sud-Ouest ↙️</option>
+                <option value="team1">l'Ouest ⬅️</option>
+                <option value="team1">le Nord-Ouest ↖️</option>
+            </select>
+            <button id="copyButton1" onclick="copyText1()">Copier la phrase</button>    
+        </div>
+        </section>
+    
+        <section class="section-all">
+            <h2>Déplacement d'une Équipe vers une station</h2>
+            <div class="section-div">
+            <p>L' </p>
+            <select name="Team" id="teamSelect">
+                <option value="team1">Équipe Mister X</option>
+                <option value="team2">Équipe 1</option>
+                <option value="team3">Équipe 2</option>
+                <option value="team4">Équipe 3</option>
+                <option value="team5">Équipe 4</option>
+            </select>
+            <p> s'est déplacée vers la Station N° </p>
+            <input type="number" id="stationNumber" name="Station Number" min="1" max="116">
+            <button id="copyButton2" onclick="copyText2()">Copier la phrase</button>    
+        </div>
+        </section>
+    
+        <section class="section-all">
+            <h2>Annonce de la position de Mister X</h2>
+            <div class="section-div">
+            <p>Tour N° </p>
+            <select name="Round" id="roundSelect">
+                <option value="round1">3</option>
+                <option value="round2">8</option>
+                <option value="round3">13</option>
+                <option value="round4">18</option>
+                <option value="round5">23</option>
+                <option value="round6">26</option>
+                <option value="round7">29</option>
+                <option value="round9">30</option>
+            </select>
+            <p> Mister X est à la station N° </p>
+            <input type="number" id="stationNumber2" name="Station Number" min="1" max="116">
+            <button id="copyButton3" onclick="copyText3()">Copier la phrase</button>    
+        </div>
+        </section>
+    
+        <section class="section-all">
+            <h2>Utilisation d'un délacement mystère par Mister X</h2>
+            <div class="section-div">
+            <p>Mister X a utilisé un déplacement mystère! </p>
+            <button id="copyButton4" onclick="copyText4()">Copier la phrase</button>    
+        </div>
+        </section>
+        
+    </div>
+
+    <div class="div-title">
+        <h1>Positions actuelles des Équipes 🔽</h1>
+    </div>
+
+    <div class="div-section div-main-localisations">
+        <div class="localisations">
+            <h3>Mister X</h3>
+            <p>Position:</p>
+            <input type="number" id="locNumber1" name="Station Number" min="1" max="116">
+        </div>
+        <div class="localisations">
+            <h3>Équipe 1</h3>
+            <p>Position:</p>
+            <input type="number" id="locNumber2" name="Station Number" min="1" max="116">
+        </div>
+        <div class="localisations">
+            <h3>Équipe 2</h3>
+            <p>Position:</p>
+            <input type="number" id="locNumber3" name="Station Number" min="1" max="116">
+        </div>
+        <div class="localisations">
+            <h3>Équipe 3</h3>
+            <p>Position:</p>
+            <input type="number" id="locNumber4" name="Station Number" min="1" max="116">
+        </div>
+        <div class="localisations">
+            <h3>Équipe 4</h3>
+            <p>Position:</p>
+            <input type="number" id="locNumber5" name="Station Number" min="1" max="116">
+        </div>
+    </div>
+
+    <div class="div-title">
+        <h1>Loging 🔽</h1>
+    </div>
+
+    <div class="div-section log-container">
+        <h2>Voici les logs de la partie:</h2>
+
+    </div>
+
+    <footer>
+        <h2>Web App made by Valentin [Beta]</h2>
+    </footer>
+
+    <div class="container-notifications">
+            
+    </div>
+
+    <script src="assets/scripts/script.js"></script>
+
+</body>
+</html>
