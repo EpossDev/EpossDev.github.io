@@ -1,3 +1,4 @@
+//Beta 2
 const roundData = [
     [
         "<ol><li>⚠️ Avant de commencer la partie:</li><li>Aller dans Début de partie, et générer les positions des différentes équipes</li><li>Chaque équipe doit aller à la position qui lui a été assignée</li><li>Les équipes doivent de connecter à l'appel (Discord)<li>La partie peut commencer ! Cliquez sur suivant</ol><button id='desactivateCLoc' onclick='stopCLocalisations()'>Désactiver les indices cardinaux des déplacements de Mister X</button><button id='desactivateNotifications' onclick='stopNotifications()'>Désactiver les notifications</button> ", //Round 0 // roundData[0][0]
