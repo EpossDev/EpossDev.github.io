@@ -1,6 +1,6 @@
 const roundData = [
     [
-        "<ol><li>⚠️ Avant de commencer la partie:</li><li>Aller dans Début de partie, et générer les positions des différentes équipes</li><li>Chaque équipe doit aller à la position qui lui a été assignée</li><li>Les équipes doivent se connecter à l'appel (Discord)<li>La partie peut commencer ! Cliquez sur suivant</ol><button id='desactivateCLoc' onclick='stopCLocalisations()'>Désactiver les indices cardinaux des déplacements de Mister X</button><button id='desactivateNotifications' onclick='stopNotifications()'>Désactiver les notifications</button> ", //Round 0 // roundData[0][0]
+        "<ol><li>⚠️ Avant de commencer la partie:</li><li>Aller dans Début de partie, et générer les positions des différentes équipes</li><li>Chaque équipe doit aller à la position qui lui a été assignée</li><li>Les équipes doivent de connecter à l'appel (Discord)<li>La partie peut commencer ! Cliquez sur suivant</ol><button id='desactivateCLoc' onclick='stopCLocalisations()'>Désactiver les indices cardinaux des déplacements de Mister X</button><button id='desactivateNotifications' onclick='stopNotifications()'>Désactiver les notifications</button> ", //Round 0 // roundData[0][0]
         "<ol><li>Mister X change de position en annonçant la direction cardinal de la station vers laquelle il se rend</li><li>Les équipes de chercheurs se déplacent en annonçant le numéro de la station vers laquelle ils se rendent (chaque équipe doit se déplacer vers une station différente)</li></ol>", //Round 1
         "<ol><li>Mister X change de position en annonçant la direction cardinal de la station vers laquelle il se rend</li><li>Les équipes de chercheurs se déplacent en annonçant le numéro de la station vers laquelle ils se rendent (chaque équipe doit se déplacer vers une station différente)</li></ol>",
         "<ol><li>⚠️ On est au Tour 3, Mister X va donc annoncer sa position !</li><li>Mister X change de position en annonçant le numéro de la station vers laquelle il se rend</li><li>Les équipes de chercheurs se déplacent en annonçant le numéro de la station vers laquelle ils se rendent (chaque équipe doit se déplacer vers une station différente)</li></ol>",
@@ -54,6 +54,31 @@ const roundInstructionsContainer = document.querySelector('.roundInstructionsCon
 let roundNumber = 0
 let areNotificationsActive = true
 
+function sendMessageToDiscord(text) {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1140628962117177354/111DRrxxskLzuRlwASMS_gGMX0esztCyVbloR6vrX7I2uTh1HSNy7E5sv-WVfIDiFkld");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      content: text
+    }
+
+    request.send(JSON.stringify(params));
+}
+function sendLogingToDiscord(text) {
+    const request = new XMLHttpRequest();
+    request.open("POST", "https://discord.com/api/webhooks/1140638111831969913/GfC1WuI_OT_ZYHnXVtk_O-lnPwWa9HsrMSIyjo-hBRc2o_yTWLi-LGML5WScbRhLFaJt");
+
+    request.setRequestHeader('Content-type', 'application/json');
+
+    const params = {
+      content: text
+    }
+
+    request.send(JSON.stringify(params));
+}
+
 function stopCLocalisations() {
     let div = document.getElementById('cardinalIndex');
     div.style.display = "none";
@@ -80,6 +105,7 @@ function log(text) {
     log.classList.add('loging');
     log.innerText = text;
     containerloging.appendChild(log);
+    sendLogingToDiscord(text)
 }
 
 function updateRound() {
@@ -103,32 +129,32 @@ function nextRound() {
     }
 }
 
-function copyText1() {
+function sendText1() {
     var dropdown = document.getElementById("cardinalSelect");
-    var Text = `🔵 L'**Équipe Mister X** s'est déplacée vers** ${dropdown.options[dropdown.selectedIndex].text}**`;
-    navigator.clipboard.writeText(Text);
+    var text = `🔵 L'**Équipe Mister X** s'est déplacée vers** ${dropdown.options[dropdown.selectedIndex].text}**`;
+    sendMessageToDiscord(text);
     notification("🔵 Texte copié dans le presse-papier !");
     log(`🔵 L'Équipe Mister X s'est déplacée vers ${dropdown.options[dropdown.selectedIndex].text}`);
 }
-function copyText2() {
+function sendText2() {
     var dropdown = document.getElementById("teamSelect");
     var numberSelect = document.getElementById("stationNumber")
-    var Text = `🟢 L'**${dropdown.options[dropdown.selectedIndex].text}** s'est déplacée vers la **Station N°${numberSelect.value}**`;
-    navigator.clipboard.writeText(Text);
+    var text = `🟢 L'**${dropdown.options[dropdown.selectedIndex].text}** s'est déplacée vers la **Station N°${numberSelect.value}**`;
+    sendMessageToDiscord(text);
     notification("🟢 Texte copié dans le presse-papier !");
     log(`🟢 L'${dropdown.options[dropdown.selectedIndex].text} s'est déplacée vers la Station N°${numberSelect.value}`)
 }
-function copyText3() {
+function sendText3() {
     var dropdown = document.getElementById("roundSelect");
     var numberSelect = document.getElementById("stationNumber2")
-    var Text = `🔴 On est au **Tour N°${dropdown.options[dropdown.selectedIndex].text}**, **Mister X** doit révéler sa **position** ! Il est à la **Station N°${numberSelect.value}** ! ⚠️`;
-    navigator.clipboard.writeText(Text);
+    var text = `🔴 On est au **Tour N°${dropdown.options[dropdown.selectedIndex].text}**, **Mister X** doit révéler sa **position** ! Il est à la **Station N°${numberSelect.value}** ! ⚠️`;
+    sendMessageToDiscord(text);
     notification("🔴 Texte copié dans le presse-papier !");
     log(`🔴 On est au Tour N°${dropdown.options[dropdown.selectedIndex].text}, Mister X doit révéler sa position ! Il est à la Station N°${numberSelect.value} ! ⚠️`)
 }
-function copyText4() {
-    var Text = `🟠 **Mister X** a utilisé un **déplacement mystère** ! ❓`;
-    navigator.clipboard.writeText(Text);
+function sendText4() {
+    var text = `🟠 **Mister X** a utilisé un **déplacement mystère** ! ❓`;
+    sendMessageToDiscord(text);
     notification("🟠 Texte copié dans le presse-papier !");
     log(`🟠 Mister X a utilisé un déplacement mystère ! ❓`)
 }
