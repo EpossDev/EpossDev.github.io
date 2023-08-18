@@ -1436,8 +1436,8 @@ function moveMisterX(index, nextIndex){
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
         sessionStorage.setItem('misterx-location', number);
-        updateLiveLocations();
         mainBtnFunction(nextIndex);
+        updateLiveLocations();
     }
 }
 function moveTeams(index, nextIndex){
@@ -1516,8 +1516,8 @@ function moveTeams(index, nextIndex){
             sendMessageToDiscordFunction(textMessage4);
             sessionStorage.setItem('team4-location', number4);
         }
-        updateLiveLocations();
         mainBtnFunction(nextIndex);
+        updateLiveLocations();
         let roundNumber = sessionStorage.getItem('roundNumber');
         sessionStorage.setItem('roundNumber', Number(roundNumber)+1);
         updateRoundNumber();
