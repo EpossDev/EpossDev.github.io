@@ -187,7 +187,7 @@ nav h1 {
 .menu-locations-span {
     border-radius: 100%;
 }
-#menu-locations-span-one {
+.menu-locations-span-one {
     width: 100%;
     height: 100%;
     background-color: rgba(255,69,58, 0.7);
@@ -195,11 +195,14 @@ nav h1 {
     justify-content: center;
     align-items: center;
 }
-#menu-locations-span-two {
+.menu-locations-span-two {
     width: 50%;
     height: 50%;
     animation: locationsLiveAnimation 1s ease-in-out infinite;
     animation-play-state: paused;
+}
+.menu-locations-span-two-start {
+    animation-play-state: running;
 }
 @keyframes locationsLiveAnimation {
     from, to {
@@ -470,10 +473,24 @@ nav h1 {
     color: #fff;
     cursor: pointer;
 }
-#btn-1 {
+#btn-blue {
     background-color: var(--dark-blue);
 }
-
+#btn-green {
+    background-color: var(--dark-green);
+}
+#btn-purple {
+    background-color: var(--dark-purple);
+}
+.main-container-frame-select {
+    margin: 1rem 0.5rem;
+    font-size: 2.5rem;
+}
+.main-container-frame-input {
+    padding: 0 0.5rem;
+    margin: 1rem 0.5rem;
+    font-size: 2.5rem;
+}
 
 
 
