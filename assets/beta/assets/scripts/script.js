@@ -1378,7 +1378,9 @@ function updateRoundNumber(){
 }
 function createLog(text){
     let logContainer = document.querySelector('.loging-container-scrollbox');
-    logContainer.innerHTML = `<p>${text}</p>`;
+    let HTMLelement = document.createElement('p');
+    HTMLelement.innerHTML = `${text}`;
+    logContainer.appendChild(HTMLelement);
 
     let sendLogingToDiscordVar = localStorage.getItem('sendLogingToDiscord');
     if (sendLogingToDiscordVar=="true"){
