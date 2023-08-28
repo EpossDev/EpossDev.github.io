@@ -263,16 +263,17 @@ nav h1 {
     align-items: center;
     margin: 1.5rem 0;
 }
-.menu-settings-box p {
+.menu-settings-box-text {
     font-size: 2.5rem;
     padding-right: 8rem;
+    width: 100%;
 }
 .menu-settings-switch-container{
     background-color: #111;
     width: 6rem;
     height: 3rem;
-    position: absolute;
-    right: 4rem;
+    position: fixed;
+    right: 10%;
     border-radius: 10rem;
     transition: all 0.5s ease-in-out;
 }
@@ -295,9 +296,9 @@ nav h1 {
     left: auto;
 }
 .menu-settings-box-arrow {
-    position: absolute;
+    position: fixed;
+    right: 10%;
     margin-top: 0.75rem;
-    right: 4rem;
     width: 2rem;
     height: 4rem;
     cursor: pointer;
@@ -342,7 +343,7 @@ nav h1 {
     height: 100%;
     position: fixed;
     z-index: 999;
-    bottom: -91rem;
+    bottom: -100%;
     transition: all 0.5s ease-out;
 }
 .loging-container-open {
@@ -453,7 +454,7 @@ nav h1 {
     z-index: -1;
 }
 .main-container-frame {
-    margin: 1rem 0;
+    margin: 1rem 0 11rem 0;
     padding: 0.5rem;
     width: 90%;
     background-color: #222;
@@ -504,8 +505,6 @@ nav h1 {
     font-size: 2.5rem;
 }
 
-
-
 /*All*/
 .main-div {
     display: none;
@@ -520,4 +519,72 @@ nav h1 {
     border: #fff;
     border-top: 0.1rem solid #fff;
     padding-top: 0.5rem;
+}
+
+/*Responsive*/
+@media screen and (max-width: 500px) {
+    .menu-settings-box-text, .loging-container h1, .main-container-frame-div p, .main-container-frame-btn, .main-container-frame-select, .main-container-frame-input{
+        font-size: 2rem;
+    }
+    #roundTitle {
+        font-size: 2.5rem;
+    }
+}
+@media screen and (max-width: 290px) {
+    nav h1, #roundTitle {
+        font-size: 2rem;
+    }
+    #menu-locations-btn, #menu-toggle {
+        top: 0.9rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    .live-locations-element {
+        margin: 1rem 0.3rem;
+    }
+}
+@media screen and (max-width: 345px) {
+    .introText {
+        font-size: 5rem;
+    }
+}
+@media screen and (max-height: 775px) {
+    .introText {
+        font-size: 5rem;
+    }
+}
+@media screen and (max-width: 315px) {
+    .live-locations-element#live-locations-element-one:before {
+        content: 'Mr.X';
+    }
+    .live-locations-element#live-locations-element-two:before {
+        content: 'É1';
+    }
+    .live-locations-element#live-locations-element-three:before {
+        content: 'É2';
+    }
+    .live-locations-element#live-locations-element-four:before {
+        content: 'É3';
+    }
+    .live-locations-element#live-locations-element-five:before {
+        content: 'É4';
+    }
+    .introText {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-height: 670px) {
+    .introText {
+        font-size: 4rem;
+    }
+}
+@media screen and (max-width: 235px) {
+    .introText {
+        font-size: 3rem;
+    }
+}
+@media screen and (max-height: 500px) {
+    .introText {
+        font-size: 3rem;
+    }
 }
