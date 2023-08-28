@@ -1530,5 +1530,3 @@ function currentTime(){
     return timeReturned;
 }
 //End Main
-}
-//End Main
