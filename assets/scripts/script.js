@@ -793,209 +793,22 @@ let mainHTMLElements = [
         </select><br>
         <button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,55)">Valider</button>
         </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,56)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Mister X se déplace !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-indigo" class="main-container-frame-btn" onclick="moveMisterX(1,57)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,58)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,59)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,60)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>⚠️ Mister X a révélé sa position au dernier tour, son prochain déplacement sera mystère !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,61)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,62)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Mister X se déplace !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-indigo" class="main-container-frame-btn" onclick="moveMisterX(1,63)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,64)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,65)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,66)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>⚠️ Mister X a révélé sa position au dernier tour, son prochain déplacement sera mystère !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,67)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,68)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p>
-        <input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116">
-        <p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p>
-        <select class="main-container-frame-select" id="cardinalSelect1">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-        </select><br>
-        <button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,69)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p>
-        <input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116">
-        <p>Équipe 2:</p>
-        <input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116">
-        <p>Équipe 3:</p>
-        <input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116">
-        <p>Équipe 4:</p>
-        <input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br>
-        <button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,70);gameWon(2)">Valider</button>
-        </div>`,
-        `<div class="main-container-frame-div">
-        <p>⚠️ On est au Tour N°31, aucune équipe n'a réussi a trouver Mister X !<br>Mister X a gagné ! 🏆</p>
-        </div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,56)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Mister X se déplace !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-indigo" class="main-container-frame-btn" onclick="moveMisterX(1,57)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,58)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,59)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,60)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>⚠️ Mister X a révélé sa position au dernier tour, son prochain déplacement sera mystère !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,61)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,62)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Mister X se déplace !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-indigo" class="main-container-frame-btn" onclick="moveMisterX(1,63)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,64)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,65)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,66)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>⚠️ Mister X a révélé sa position au dernier tour, son prochain déplacement sera mystère !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,67)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,68)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,69)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,70);gameWon(2)">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>⚠️ On est au Tour N°31, aucune équipe n'a réussi a trouver Mister X !<br>Mister X a gagné ! 🏆</p></div>`,
         ``, //Page 71 Generated by the gameWon() function
     ]
 ];
