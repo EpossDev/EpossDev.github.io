@@ -1,181 +1,101 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MisterX IRL</title>
+    <title>Mister X IRL</title>
     <link rel="stylesheet" href="assets/scripts/style.css">
 </head>
 <body>
-
-    <h1>Bienvenue sur le Tableau de Bord du Mister X IRL</h1>
-
-    <div class="div-title">
-        <h1>Instructions de Jeu 🔽</h1>
+    <div class="introContainer">
+        <div class="introTextContainer">
+            <div class="introText1 introText">Mister X IRL</div>
+            <div class="introText2 introText">Mister X IRL</div>
+            <div class="introText3 introText">Mister X IRL</div>
+            <div class="introText4 introText">Mister X IRL</div>
+            <div class="introText5 introText">Mister X IRL</div>
+            <div class="introText6 introText">Mister X IRL</div>
+            <div class="introText7 introText">Mister X IRL</div>
+            <div class="introText8 introText">Mister X IRL</div>
+            <div class="introText9 introText">Mister X IRL</div>
+            <div class="introText10 introText">Mister X IRL</div>
+            <div class="introText11 introText">Mister X IRL</div>
+        </div>
     </div>
 
-    <div class="div-section">
-        <h2 id="roundNumberTitle">Tour N°</h2>
-        <div class="roundInstructionsContainer">
+    <div class="main-div">
+        <nav>
+            <div class="menu-container">
+                <div class="menu-settings-box-container">
+                    <div class="menu-settings-box">
+                        <p class="menu-settings-box-text">Directions Cardinales</p>
+                        <div class="menu-settings-switch-container" id="menu-settings-switch-container-one">
+                            <div class="menu-settings-switch-btn" id="menu-settings-switch-btn-one"></div>
+                        </div>
+                    </div>
+                    <div class="menu-settings-box">
+                        <p class="menu-settings-box-text">Envoi des notifications vers Discord</p>
+                        <div class="menu-settings-switch-container" id="menu-settings-switch-container-three">
+                            <div class="menu-settings-switch-btn" id="menu-settings-switch-btn-three"></div>
+                        </div>
+                    </div>
+                    <div class="menu-settings-box">
+                        <p class="menu-settings-box-text">Envoi du loging vers Discord</p>
+                        <div class="menu-settings-switch-container" id="menu-settings-switch-container-four">
+                            <div class="menu-settings-switch-btn" id="menu-settings-switch-btn-four"></div>
+                        </div>
+                    </div>
+                    <div class="menu-settings-box" id="menu-settings-box-loging">
+                        <p class="menu-settings-box-text">Loging</p>
+                        <div class="menu-settings-box-arrow">
+                            <div class="menu-settings-box-arrow-one"></div>
+                            <div class="menu-settings-box-arrow-two"></div>
+                        </div>
+                    </div>
+                </div>
+                <p id="appVersionNumber">App made by <a href="https://github.com/EpossDev" target="_blank">Valentin</a><br>V.1.0</p>
+            </div>
             
+            <div id="menu-locations-btn">
+                <div class="menu-locations-span menu-locations-span-one"><div class="menu-locations-span menu-locations-span-two"></div></div>
+            </div>
+            <h1>Mister X IRL</h1>
+            <div id="menu-toggle">
+                <div class="menu-toggle-span" id="menu-toggle-span-one"></div>
+                <div class="menu-toggle-span" id="menu-toggle-span-two"></div>
+                <div class="menu-toggle-span" id="menu-toggle-span-three"></div>
+            </div>
+        </nav>
+        <div class="loging-container">
+            <p id="loging-container-close">OK</p>
+            <h1>Loging</h1>
+            <div class="loging-container-scrollbox">
+            </div>
         </div>
-        <button id="previousRoundButton" class="roundButton" onclick="previousRound()">Précédent</button>
-        <button id="nextRoundButton" class="roundButton" onclick="nextRound()">Suivant</button>
-    </div>
 
-    <div class="div-title">
-        <h1>Début de partie 🔽</h1>
-    </div>
-
-    <div class="div-section">
-        <div class="baseLocalisations">
-            <h3>Mister X</h3>
-            <p>Position:</p>
-            <button id="numberGenerator1" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
-        </div>
-        <div class="baseLocalisations">
-            <h3>Équipe 1</h3>
-            <p>Position:</p>
-            <button id="numberGenerator2" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
-        </div>
-        <div class="baseLocalisations">
-            <h3>Équipe 2</h3>
-            <p>Position:</p>
-            <button id="numberGenerator3" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
-        </div>
-        <div class="baseLocalisations">
-            <h3>Équipe 3</h3>
-            <p>Position:</p>
-            <button id="numberGenerator4" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
-        </div>
-        <div class="baseLocalisations">
-            <h3>Équipe 4</h3>
-            <p>Position:</p>
-            <button id="numberGenerator5" class="numberGenerator" onclick="numberGenerator(this.id)">Générer une position de base</button>
-        </div>
-    </div>
-
-    <div class="div-title">
-        <h1>Générateur de phrases pour Discord 🔽</h1>
-    </div>
-
-    <div class="div-section">
-
-        <section class="section-all" id="cardinalIndex">
-            <h2>Déplacement de Mister X vers un point cardinal</h2>
-            <div class="section-div">
-            <p>L'Équipe Mister X s'est déplacée vers </p>
-            <select name="Cardinal" id="cardinalSelect">
-                <option value="team1">le Nord ⬆️</option>
-                <option value="team1">le Nord-Est ↗️</option>
-                <option value="team1">l'Est ➡️</option>
-                <option value="team1">le Sud-Est ↘️</option>
-                <option value="team1">le Sud ⬇️</option>
-                <option value="team1">le Sud-Ouest ↙️</option>
-                <option value="team1">l'Ouest ⬅️</option>
-                <option value="team1">le Nord-Ouest ↖️</option>
-            </select>
-            <button id="copyButton1" onclick="sendText1()">Envoyer</button>    
-        </div>
-        </section>
-    
-        <section class="section-all">
-            <h2>Déplacement d'une Équipe vers une station</h2>
-            <div class="section-div">
-            <p>L' </p>
-            <select name="Team" id="teamSelect">
-                <option value="team1">Équipe Mister X</option>
-                <option value="team2">Équipe 1</option>
-                <option value="team3">Équipe 2</option>
-                <option value="team4">Équipe 3</option>
-                <option value="team5">Équipe 4</option>
-            </select>
-            <p> s'est déplacée vers la Station N° </p>
-            <input type="number" id="stationNumber" name="Station Number" min="1" max="116">
-            <button id="copyButton2" onclick="sendText2()">Envoyer</button>    
-        </div>
-        </section>
-    
-        <section class="section-all">
-            <h2>Annonce de la position de Mister X</h2>
-            <div class="section-div">
-            <p>Tour N° </p>
-            <select name="Round" id="roundSelect">
-                <option value="round1">3</option>
-                <option value="round2">8</option>
-                <option value="round3">13</option>
-                <option value="round4">18</option>
-                <option value="round5">23</option>
-                <option value="round6">26</option>
-                <option value="round7">29</option>
-                <option value="round9">30</option>
-            </select>
-            <p> Mister X est à la station N° </p>
-            <input type="number" id="stationNumber2" name="Station Number" min="1" max="116">
-            <button id="copyButton3" onclick="sendText3()">Envoyer</button>    
-        </div>
-        </section>
-    
-        <section class="section-all">
-            <h2>Utilisation d'un délacement mystère par Mister X</h2>
-            <div class="section-div">
-            <p>Mister X a utilisé un déplacement mystère! </p>
-            <button id="copyButton4" onclick="sendText4()">Envoyer</button>    
-        </div>
-        </section>
+        <h1 id="roundTitle">Début de Partie</h1>
         
-    </div>
-
-    <div class="div-title">
-        <h1>Positions actuelles des Équipes 🔽</h1>
-    </div>
-
-    <div class="div-section div-main-localisations">
-        <div class="localisations">
-            <h3>Mister X</h3>
-            <p>Position:</p>
-            <input type="number" id="locNumber1" name="Station Number" min="1" max="116">
+        <div class="main-container">
+            <div class="main-container-frame">
+                <div class="main-container-frame-div">
+                    <p>Bienvenue sur le Tableau de Bord du Mister X IRL, cliquez sur le bouton ci-dessous pour commencer.<br><br>Pour votre informations, voici le nombre d'équipes selon le nombre de joueurs (en comptant Mister X et le gérant):<br>4 joueurs (minimum) → 1 équipe de 2<br>5 joueurs → 1 équipe de 3<br>6 joueurs → 2 équipes de 2<br>7 joueurs → 1 équipe de 2 et 1 équipe de 3<br>8 joueurs → 3 équipes de 2<br>9 joueurs → 3 équipes de 2 et 1 équipe de 3<br>10 joueurs → 4 équipes de 2</p>
+                    <button id="btn-blue" class="main-container-frame-btn" onclick="mainBtnFunction(1)">Continuer</button>
+                </div>
+            </div>
         </div>
-        <div class="localisations">
-            <h3>Équipe 1</h3>
-            <p>Position:</p>
-            <input type="number" id="locNumber2" name="Station Number" min="1" max="116">
+
+        <div class="live-locations-div">
+            <div class="live-locations-div-topbar"><div class="live-locations-div-topbar-span"></div></div>
+            <div class="live-locations-div-container">
+                <div class="live-locations-element" id="live-locations-element-one">NA</div>
+                <div class="live-locations-element" id="live-locations-element-two">NA</div>
+                <div class="live-locations-element" id="live-locations-element-three">NA</div>
+                <div class="live-locations-element" id="live-locations-element-four">NA</div>
+                <div class="live-locations-element" id="live-locations-element-five">NA</div>
+            </div>
         </div>
-        <div class="localisations">
-            <h3>Équipe 2</h3>
-            <p>Position:</p>
-            <input type="number" id="locNumber3" name="Station Number" min="1" max="116">
-        </div>
-        <div class="localisations">
-            <h3>Équipe 3</h3>
-            <p>Position:</p>
-            <input type="number" id="locNumber4" name="Station Number" min="1" max="116">
-        </div>
-        <div class="localisations">
-            <h3>Équipe 4</h3>
-            <p>Position:</p>
-            <input type="number" id="locNumber5" name="Station Number" min="1" max="116">
-        </div>
-    </div>
-
-    <div class="div-title">
-        <h1>Loging 🔽</h1>
-    </div>
-
-    <div class="div-section log-container">
-        <h2>Voici les logs de la partie:</h2>
-
-    </div>
-
-    <footer>
-        <h2>Web App made by Valentin <a href="./assets/beta/index.html" target="_blank" style="color:#fff;text-decoration:none;">[Beta 2]</a></h2>
-    </footer>
-
-    <div class="container-notifications">
-            
     </div>
 
     <script src="assets/scripts/script.js"></script>
-
 </body>
 </html>
