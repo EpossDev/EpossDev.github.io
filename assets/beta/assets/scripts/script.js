@@ -2,16 +2,12 @@
 
 //Creating Variables
 let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
-let areAlertNotificationsActive = localStorage.getItem('areAlertNotificationsActive');
 let sendNotificationsToDiscord = localStorage.getItem('sendNotificationsToDiscord');
 let sendLogingToDiscord = localStorage.getItem('sendLogingToDiscord');
 
 function createVariables() {
     if (!(areCardinalDirectionsActive)){
         localStorage.setItem('areCardinalDirectionsActive', 'true')
-    }
-    if (!(areAlertNotificationsActive)){
-        localStorage.setItem('areAlertNotificationsActive', 'true')
     }
     if (!(sendNotificationsToDiscord)){
         localStorage.setItem('sendNotificationsToDiscord', 'true')
@@ -65,7 +61,6 @@ const menuSettingsSwitchBtnFour = document.getElementById('menu-settings-switch-
 
 function updateSettingsSwitchBtn(){
     let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
-    let areAlertNotificationsActive = localStorage.getItem('areAlertNotificationsActive');
     let sendNotificationsToDiscord = localStorage.getItem('sendNotificationsToDiscord');
     let sendLogingToDiscord = localStorage.getItem('sendLogingToDiscord');
     if(areCardinalDirectionsActive=='true'){
@@ -74,13 +69,6 @@ function updateSettingsSwitchBtn(){
     }else if(areCardinalDirectionsActive=='false'){
         menuSettingsSwitchContainerOne.classList.remove('menu-settings-switch-container-true');
         menuSettingsSwitchBtnOne.classList.remove('menu-settings-switch-btn-true');
-    }
-    if(areAlertNotificationsActive=='true'){
-        menuSettingsSwitchContainerTwo.classList.add('menu-settings-switch-container-true');
-        menuSettingsSwitchBtnTwo.classList.add('menu-settings-switch-btn-true');
-    }else if(areAlertNotificationsActive=='false'){
-        menuSettingsSwitchContainerTwo.classList.remove('menu-settings-switch-container-true');
-        menuSettingsSwitchBtnTwo.classList.remove('menu-settings-switch-btn-true');
     }
     if(sendNotificationsToDiscord=='true'){
         menuSettingsSwitchContainerThree.classList.add('menu-settings-switch-container-true');
@@ -106,16 +94,6 @@ menuSettingsSwitchBtnOne.addEventListener('click', function(){
         updateSettingsSwitchBtn();
     }else if(areCardinalDirectionsActive=='false'){
         localStorage.setItem('areCardinalDirectionsActive', 'true')
-        updateSettingsSwitchBtn();
-    }
-})
-menuSettingsSwitchBtnTwo.addEventListener('click', function(){
-    let areAlertNotificationsActive = localStorage.getItem('areAlertNotificationsActive');
-    if(areAlertNotificationsActive=='true'){
-        localStorage.setItem('areAlertNotificationsActive', 'false')
-        updateSettingsSwitchBtn();
-    }else if(areAlertNotificationsActive=='false'){
-        localStorage.setItem('areAlertNotificationsActive', 'true')
         updateSettingsSwitchBtn();
     }
 })
@@ -1151,19 +1129,28 @@ function mainBtnFunction(index){
 }
 function selectNumberOfTeam(){
     let dropdown = document.getElementById('numberOfTeamSelect');
+    let liveLocationElementTeam2 = document.getElementById('live-locations-element-three');
+    let liveLocationElementTeam3 = document.getElementById('live-locations-element-four');
+    let liveLocationElementTeam4 = document.getElementById('live-locations-element-five');
     if(dropdown.value == "oneTeam"){
         sessionStorage.setItem('doesTeam2Exist', 'false');
         sessionStorage.setItem('doesTeam3Exist', 'false');
         sessionStorage.setItem('doesTeam4Exist', 'false');
+        liveLocationElementTeam2.remove();
+        liveLocationElementTeam3.remove();
+        liveLocationElementTeam4.remove();
     }else if (dropdown.value == "twoTeams"){
         sessionStorage.setItem('doesTeam2Exist', 'true');
         sessionStorage.setItem('doesTeam3Exist', 'false');
         sessionStorage.setItem('doesTeam4Exist', 'false');
+        liveLocationElementTeam3.remove();
+        liveLocationElementTeam4.remove();
     }
     else if (dropdown.value == "threeTeams"){
         sessionStorage.setItem('doesTeam2Exist', 'true');
         sessionStorage.setItem('doesTeam3Exist', 'true');
         sessionStorage.setItem('doesTeam4Exist', 'false');
+        liveLocationElementTeam4.remove();
     }
     else if (dropdown.value == "fourTeams"){
         sessionStorage.setItem('doesTeam2Exist', 'true');
@@ -1375,16 +1362,18 @@ function updateRoundNumber(){
     let roundNumberTitle = document.getElementById('roundTitle');
     roundNumberTitle.innerHTML = "Tour N°" + roundNumber;
     createLog(roundNumberTitle.innerHTML);
+    sendMessageToDiscordFunction(`**${roundNumberTitle.innerHTML}**`);
 }
 function createLog(text){
     let logContainer = document.querySelector('.loging-container-scrollbox');
     let HTMLelement = document.createElement('p');
-    HTMLelement.innerHTML = `${text}`;
+    let time = currentTime();
+    HTMLelement.innerHTML = `${time} ${text}`;
     logContainer.appendChild(HTMLelement);
 
     let sendLogingToDiscordVar = localStorage.getItem('sendLogingToDiscord');
     if (sendLogingToDiscordVar=="true"){
-        sendLogingToDiscordFunction(text);
+        sendLogingToDiscordFunction(`${time} ${text}`);
     }
 }
 function sendMessageToDiscordFunction(text) {
@@ -1433,7 +1422,10 @@ function moveMisterX(index, nextIndex){
         mainBtnFunction(nextIndex);
     }
     else if(index==3){
-        let textLog = `🟠 Mister X a utilisé un déplacement mystère ! ❓`;
+        let number = document.querySelector('.main-container-frame-input').value;
+        let dropdown = document.querySelector('.main-container-frame-select');
+        let cardinal = dropdown.options[dropdown.selectedIndex].text;
+        let textLog = `🟠 Mister X a utilisé un déplacement mystère ! ❓ Il s'est déplacé vers ${cardinal}, à la Station N°${number}`;
         let textMessage = `🟠 **Mister X** a utilisé un **déplacement mystère** ! ❓`;
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
@@ -1524,5 +1516,19 @@ function moveTeams(index, nextIndex){
         sessionStorage.setItem('roundNumber', Number(roundNumber)+1);
         updateRoundNumber();
     }
+}
+function currentTime(){
+    let currentDate = new Date();
+    let year = currentDate.getFullYear();
+    let month = currentDate.getMonth();
+    let day = currentDate.getDate();
+    let hour = currentDate.getHours();
+    let minutes = currentDate.getMinutes();
+    let seconds = currentDate.getSeconds();
+    let milliseconds = currentDate.getMilliseconds();
+    let timeReturned = `[${year}-${month}-${day} | ${hour}:${minutes}:${seconds}:${milliseconds}]`;
+    return timeReturned;
+}
+//End Main
 }
 //End Main
