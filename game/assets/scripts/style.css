@@ -1,3 +1,104 @@
+:root {
+    --red: red;
+    --dark-lvl2: #111;
+    --dark-lvl3: #222;
+    --dark-lvl4: #333;
+}
+html {
+    font-size: 62.5%;
+}
+* {
+    font-family: 'Anonymous Pro', monospace;
+    margin: 0;
+    padding: 0;
+}
 body {
     background: #000;
+    color: #fff;
+}
+
+/**Left Menu*/
+#left-menu-container {
+    background: var(--darklvl2);
+    position: fixed;
+    width: 30rem;
+    height: calc(100% - 6rem);
+    overflow-y: auto;
+}
+#left-menu-container-title {
+    text-align: center;
+}
+.left-menu-riddles-answers-arrow {
+    position: fixed;
+    width: 2rem;
+    height: 3rem;
+}
+.left-menu-riddles-answers-arrow-top {
+    height: 0.3rem;
+    background: #fff;
+    margin: 0.5rem auto;
+    transform: rotate(45deg) translateX(0.2rem) translateY(0.2rem);
+}
+.left-menu-riddles-answers-arrow-bottom {
+    height: 0.3rem;
+    background: #fff;
+    margin: 0.5rem auto;
+    transform: rotate(-45deg) translateX(-0.5rem) translateY(0.5rem);
+}
+.left-menu-riddles-answers-container {
+    background: var(--dark-lvl3);
+    margin: 1rem 2rem;
+    padding: 1rem 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.left-menu-riddles-answers-container:hover {
+    background: var(--dark-lvl4);
+}
+.left-menu-riddles-answers-container h6 {
+    font-size: 2rem;
+    display: flex;
+}
+.left-menu-riddles-answers-container p {
+    font-size: 1.5rem;
+}
+#left-menu-toggle {
+        width: 4rem;
+        height: 4rem;
+        cursor: pointer;
+        position: absolute;
+        left: 1rem;
+        top: 1rem;
+}
+.left-menu-toggle-span {
+    height: 0.4rem;
+    background: #fff;
+    transition: all 0.3s ease-out;
+    margin: 0.75rem auto;
+    border-radius: 1rem;
+}
+/**End Left Menu*/
+
+/**Right Menu*/
+#right-menu-container{
+    background: green;
+    position: fixed;
+    width: 30rem;
+    height: calc(100% - 6rem);
+    right: 0;
+}
+/**End Right Menu*/
+
+#top-bar {
+    background-color: red;
+    width: 100%;
+    height: 6rem;
+}
+
+#user-profile-toggle {
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    right: 1rem;
+    top: 1rem;
 }
