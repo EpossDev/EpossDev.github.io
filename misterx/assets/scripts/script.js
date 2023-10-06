@@ -545,8 +545,8 @@ function generateLocations() {
         <button id="btn-green" class="main-container-frame-btn" onclick="startGame()">Commencer la partie</button>
         </div>`;
     mainBtnFunction(7);
-    updateLiveLocations();
     setGameData(1);
+    updateLiveLocations();
 }
 function startGame(){
     let liveAnimationBtn = document.querySelector('.menu-locations-span-two');
@@ -610,16 +610,16 @@ function moveMisterX(index, nextIndex){
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
         sessionStorage.setItem('misterx-location', number);
-        updateLiveLocations();
         mainBtnFunction(nextIndex);
+        updateLiveLocations();
     }else if(index==2){
         let textLog = `🔴 On est au Tour N°${roundNumber}, Mister X doit révéler sa position ! Il est à la Station N°${number}! ⚠️`;
         let textMessage = `🔴 On est au **Tour N°${roundNumber}, Mister X doit révéler sa position** ! Il est à la **Station N°${number}**! ⚠️`;
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
         sessionStorage.setItem('misterx-location', number);
-        updateLiveLocations();
         mainBtnFunction(nextIndex);
+        updateLiveLocations();
     }
     else if(index==3){
         let number = document.querySelector('.main-container-frame-input').value;
@@ -712,12 +712,12 @@ function moveTeams(index, nextIndex){
             sessionStorage.setItem('team4-location', number4);
         }
         mainBtnFunction(nextIndex);
-        updateLiveLocations();
         let roundNumber = sessionStorage.getItem('roundNumber');
         sessionStorage.setItem('roundNumber', Number(roundNumber)+1);
         updateRoundNumber();
+        setGameData(1);
+        updateLiveLocations();
     }
-    setGameData(1);
 }
 function currentTime(){
     let currentDate = new Date();
@@ -790,11 +790,11 @@ function checkGameData(){
         sessionStorage.setItem('team4PlayerName1', lastGameDataArray[18]);
         sessionStorage.setItem('team4PlayerName2', lastGameDataArray[19]);
         sessionStorage.setItem('team4PlayerName3', lastGameDataArray[20]);
-        updateLiveLocations();
         updateRoundNumber();
         let indexNumber = parseInt(lastGameDataArray[0]);
         let index = (indexNumber-1)+indexNumber+7;
         mainBtnFunction(index);
+        updateLiveLocations();
     }
 }
 checkGameData();
