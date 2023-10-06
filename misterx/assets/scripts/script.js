@@ -294,7 +294,6 @@ let mainHTMLElements = [
 
 function gameWon(index, team){
     let roundNumber = sessionStorage.getItem('roundNumber');
-    console.log("gameWon 1", roundNumber)
     if(index==1){
         let textLog = `⚠️ On est au Tour N°${roundNumber}, l'${team} a trouvé Mister X ! Félicitations ! 🏆`;
         let textMessage = `⚠️ On est au **Tour N°${roundNumber}, l'${team} a trouvé Mister X** ! Félicitations ! 🏆`;
@@ -304,15 +303,14 @@ function gameWon(index, team){
         <p>⚠️ On est au Tour N°${roundNumber}, l'${team} a trouvé Mister X ! Félicitations ! 🏆</p>
         </div>`;
         mainBtnFunction(71);
+        setGameData(2);
     }else if(index==2){
         let textLog = `⚠️ On est au Tour N°${roundNumber}, aucune équipe n'a réussi a trouver Mister X !<br>Mister X a gagné ! 🏆`;
         let textMessage = `⚠️ On est au **Tour N°${roundNumber}, aucune équipe n'a réussi a trouver Mister X** !<br>Mister X a gagné ! 🏆`;
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
+        setGameData(2);
     }
-    console.log("gameWon 2", roundNumber)
-    setGameData(2);
-    console.log("gameWon 3", roundNumber)
 }
 
 function mainBtnFunction(index){
@@ -767,7 +765,6 @@ function setGameData(index){
     }else if (index == 2){
         localStorage.setItem(`lastGameData`, `0`);
     }
-    //TODO: Add a btn to reset and restart without any settings or when gale is finished: roundNumber = 0
 }
 
 function checkGameData(){
