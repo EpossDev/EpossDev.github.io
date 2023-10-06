@@ -294,6 +294,7 @@ let mainHTMLElements = [
 
 function gameWon(index, team){
     let roundNumber = sessionStorage.getItem('roundNumber');
+    console.log("gameWon 1", roundNumber)
     if(index==1){
         let textLog = `⚠️ On est au Tour N°${roundNumber}, l'${team} a trouvé Mister X ! Félicitations ! 🏆`;
         let textMessage = `⚠️ On est au **Tour N°${roundNumber}, l'${team} a trouvé Mister X** ! Félicitations ! 🏆`;
@@ -309,7 +310,9 @@ function gameWon(index, team){
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
     }
+    console.log("gameWon 2", roundNumber)
     setGameData(2);
+    console.log("gameWon 3", roundNumber)
 }
 
 function mainBtnFunction(index){
