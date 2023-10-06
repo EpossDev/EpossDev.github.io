@@ -17,7 +17,7 @@ function createVariables() {
         localStorage.setItem('sendLogingToDiscord', 'true')
     }
     if (!(lastGameData)){
-        localStorage.setItem('lastGameData', 'false')
+        localStorage.setItem('lastGameData', '0')
     }
     sessionStorage.setItem('doesTeam2Exist', 'false');
     sessionStorage.setItem('doesTeam3Exist', 'false');
