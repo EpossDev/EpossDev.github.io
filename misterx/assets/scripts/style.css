@@ -1,4 +1,4 @@
-/*V.1.0*/
+/*V.1.1*/
 /*Intro and the menu were inspired by Codegrid on YouTube https://www.youtube.com/@codegrid */
 :root {
     --dark-red: rgb(255,69,58);
@@ -366,7 +366,7 @@ nav h1 {
 .loging-container-scrollbox {
     background-color: #000;
     height: 70%;
-    overflow: scroll;
+    overflow-y: auto;
     margin: 0 2.5rem;
 }
 .loging-container-scrollbox p {
