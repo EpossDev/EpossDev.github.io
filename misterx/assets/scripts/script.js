@@ -795,7 +795,9 @@ function checkGameData(){
         sessionStorage.setItem('team4PlayerName3', lastGameDataArray[20]);
         updateLiveLocations();
         updateRoundNumber();
-        mainBtnFunction(((lastGameDataArray[0]-1)+lastGameDataArray[0]+7));
+        let indexNumber = (lastGameDataArray[0]-1)+lastGameDataArray[0]+7;
+        console.log(indexNumber);
+        mainBtnFunction(indexNumber);
     }
 }
 
