@@ -182,7 +182,6 @@ function updateLiveLocations(){
         }else {
             gameWon(1, `Équipe 1 [${team1PlayerName1}, ${team1PlayerName2}, ${team1PlayerName3}]`);
         }
-        setGameData(2);
     }
     if(loc1==loc3 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
@@ -192,7 +191,6 @@ function updateLiveLocations(){
         }else {
             gameWon(1, `Équipe 2 [${team2PlayerName1}, ${team2PlayerName2}, ${team2PlayerName3}]`);
         }
-        setGameData(2);
     }
     if(loc1==loc4 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
@@ -202,7 +200,6 @@ function updateLiveLocations(){
         }else {
             gameWon(1, `Équipe 3 [${team3PlayerName1}, ${team3PlayerName2}, ${team3PlayerName3}]`);
         }
-        setGameData(2);
     }
     if(loc1==loc5 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
@@ -212,7 +209,6 @@ function updateLiveLocations(){
         }else {
             gameWon(1, `Équipe 4 [${team4PlayerName1}, ${team4PlayerName2}, ${team4PlayerName3}]`);
         }
-        setGameData(2);
     }
 }
 updateLiveLocations()
@@ -290,7 +286,7 @@ let mainHTMLElements = [
         `<div class="main-container-frame-div"><p>⚠️ Mister X a révélé sa position au dernier tour, son prochain déplacement sera mystère !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,67)">Valider</button></div>`,
         `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,68)">Valider</button></div>`,
         `<div class="main-container-frame-div"><p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,69)">Valider</button></div>`,
-        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,70);gameWon(2);setGameData(2);">Valider</button></div>`,
+        `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,70);gameWon(2);">Valider</button></div>`,
         `<div class="main-container-frame-div"><p>⚠️ On est au Tour N°31, aucune équipe n'a réussi a trouver Mister X !<br>Mister X a gagné ! 🏆</p></div>`,
         ``, //Page 71 Generated by the gameWon() function
     ]
@@ -313,6 +309,7 @@ function gameWon(index, team){
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
     }
+    setGameData(2);
 }
 
 function mainBtnFunction(index){
@@ -738,7 +735,6 @@ function currentTime(){
 
 //Last Game Data
 function setGameData(index){
-
     let roundNumber = sessionStorage.getItem('roundNumber');
     let doesTeam2Exist = sessionStorage.getItem('doesTeam2Exist');
     let doesTeam3Exist = sessionStorage.getItem('doesTeam3Exist');
@@ -760,12 +756,11 @@ function setGameData(index){
     let T4PN1 = sessionStorage.getItem('team4PlayerName1');
     let T4PN2 = sessionStorage.getItem('team4PlayerName2');
     let T4PN3 = sessionStorage.getItem('team4PlayerName3');
-
     if (index == 1){
-        localStorage.setItem(`lastGameData`, `${roundNumber};${doesTeam2Exist};${doesTeam3Exist};${doesTeam4Exist};${loc1};${loc2};${loc3};${loc4};${loc5};${T1PN1};${T1PN2};${T1PN3};${T2PN1};${T2PN2};${T2PN3};${T3PN1};${T3PN2};${T3PN3};${T4PN1};${T4PN2};${T4PN3}`);
+        localStorage.setItem('lastGameData', `${roundNumber};${doesTeam2Exist};${doesTeam3Exist};${doesTeam4Exist};${loc1};${loc2};${loc3};${loc4};${loc5};${T1PN1};${T1PN2};${T1PN3};${T2PN1};${T2PN2};${T2PN3};${T3PN1};${T3PN2};${T3PN3};${T4PN1};${T4PN2};${T4PN3}`);
         //* Round Number; Does Team 2 Exist; Does Team 3 Exist; Does Team 4 Exist; Mister X Location; Team 1 Location; Team 2 Location; Team 3 Location; Team 4 Location; Team 1 Player Name 1; T1PN2; T1PN3; T2PN1; T2PN2; T3PN3; T3PN1; T3PN2; T3PN3; T4PN1; T4PN2; T4PN3
-    }else if (index == 2){
-        localStorage.setItem(`lastGameData`, `0`);
+    }else{
+        localStorage.setItem('lastGameData', '0');
     }
 }
 
@@ -802,15 +797,5 @@ function checkGameData(){
         mainBtnFunction(index);
     }
 }
-
-let inputFieldsMainContainer = document.querySelectorAll('.main-container-frame-input');
-inputFieldsMainContainer.forEach((item) => {
-    item.addEventListener("keypress", (e) => {
-        console.log(e);
-        if (e.key === ";") {
-          e.preventDefault();
-        }
-    })
-});
 checkGameData();
 //End Last Game Data
