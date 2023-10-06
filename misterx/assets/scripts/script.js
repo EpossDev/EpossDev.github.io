@@ -1,9 +1,10 @@
-//V.1.0
+//V.1.1
 
 //Creating Variables
 let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
 let sendNotificationsToDiscord = localStorage.getItem('sendNotificationsToDiscord');
 let sendLogingToDiscord = localStorage.getItem('sendLogingToDiscord');
+let lastGameData = localStorage.getItem('lastGameData');
 
 function createVariables() {
     if (!(areCardinalDirectionsActive)){
@@ -14,6 +15,9 @@ function createVariables() {
     }
     if (!(sendLogingToDiscord)){
         localStorage.setItem('sendLogingToDiscord', 'true')
+    }
+    if (!(lastGameData)){
+        localStorage.setItem('lastGameData', 'false')
     }
     sessionStorage.setItem('doesTeam2Exist', 'false');
     sessionStorage.setItem('doesTeam3Exist', 'false');
@@ -281,9 +285,9 @@ let mainHTMLElements = [
         `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,66)">Valider</button></div>`,
         `<div class="main-container-frame-div"><p>⚠️ Mister X a révélé sa position au dernier tour, son prochain déplacement sera mystère !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-orange" class="main-container-frame-btn" onclick="moveMisterX(3,67)">Valider</button></div>`,
         `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,68)">Valider</button></div>`,
-        `<div class="main-container-frame-div"><p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,69)">Valider</button></div>`,
+        10000`<div class="main-container-frame-div"><p>⚠️ Mister X va devoir révéler sa position à ce tour !<br>Sélectionnez le numéro de la station vers laquelle il se rend:</p><input type="number" class="main-container-frame-input" id="misterXLocationSelect" min="1" max="116"><p>Puis sélectionnez la direction cardinal vers laquelle il se rend:</p><select class="main-container-frame-select" id="cardinalSelect1"><option value="team1">le Nord ⬆️</option><option value="team1">le Nord-Est ↗️</option><option value="team1">l'Est ➡️</option><option value="team1">le Sud-Est ↘️</option><option value="team1">le Sud ⬇️</option><option value="team1">le Sud-Ouest ↙️</option><option value="team1">l'Ouest ⬅️</option><option value="team1">le Nord-Ouest ↖️</option></select><br><button id="btn-red" class="main-container-frame-btn" onclick="moveMisterX(2,69)">Valider</button></div>`,
         `<div class="main-container-frame-div"><p>Les Équipes se déplacent !<br>Sélectionnez le numéro de la station vers chaque équipe se rend (laissez un vide pour les équipes ne jouant pas):<br>Équipe 1:</p><input type="number" class="main-container-frame-input" id="team1LocationSelect" min="1" max="116"><p>Équipe 2:</p><input type="number" class="main-container-frame-input" id="team2LocationSelect" min="1" max="116"><p>Équipe 3:</p><input type="number" class="main-container-frame-input" id="team3LocationSelect" min="1" max="116"><p>Équipe 4:</p><input type="number" class="main-container-frame-input" id="team4LocationSelect" min="1" max="116"><br><button id="btn-mint" class="main-container-frame-btn" onclick="moveTeams(1,70);gameWon(2)">Valider</button></div>`,
-        `<div class="main-container-frame-div"><p>⚠️ On est au Tour N°31, aucune équipe n'a réussi a trouver Mister X !<br>Mister X a gagné ! 🏆</p></div>`,
+        0o000`<div class="main-container-frame-div"><p>⚠️ On est au Tour N°31, aucune équipe n'a réussi a trouver Mister X !<br>Mister X a gagné ! 🏆</p></div>`,
         ``, //Page 71 Generated by the gameWon() function
     ]
 ];
@@ -305,6 +309,7 @@ function gameWon(index, team){
         createLog(textLog);
         sendMessageToDiscordFunction(textMessage);
     }
+    setGameData(2);
 }
 
 function mainBtnFunction(index){
@@ -313,6 +318,7 @@ function mainBtnFunction(index){
     let frame = document.querySelector('.main-container-frame');
     actualHTMLElements.remove();
     frame.innerHTML = nextHTMLElements;
+    setGameData(1);
 }
 function selectNumberOfTeam(){
     let dropdown = document.getElementById('numberOfTeamSelect');
@@ -344,6 +350,7 @@ function selectNumberOfTeam(){
         sessionStorage.setItem('doesTeam3Exist', 'true');
         sessionStorage.setItem('doesTeam4Exist', 'true');
     }
+    setGameData(1);
 }
 function selectPlayersNames(index){
     let doesTeam2Exist = sessionStorage.getItem('doesTeam2Exist');
@@ -425,6 +432,7 @@ function selectPlayersNames(index){
         page6GetPlayersNames();
         mainBtnFunction(6);
     }
+    setGameData(1);
 }
 function page6GetPlayersNames(){
     let doesTeam2Exist = sessionStorage.getItem('doesTeam2Exist');
@@ -482,6 +490,8 @@ function page6GetPlayersNames(){
         ${T4}
         <button id="btn-purple" class="main-container-frame-btn" onclick="generateLocations()">Continuer</button>
         </div>`;
+
+    setGameData(1);
 }
 function generateLocations() {
     let locations = [
@@ -535,14 +545,16 @@ function generateLocations() {
         <button id="btn-green" class="main-container-frame-btn" onclick="startGame()">Commencer la partie</button>
         </div>`;
     mainBtnFunction(7);
-    updateLiveLocations()
+    updateLiveLocations();
+    setGameData(1);
 }
 function startGame(){
     let liveAnimationBtn = document.querySelector('.menu-locations-span-two');
     liveAnimationBtn.classList.toggle('menu-locations-span-two-start');
     sessionStorage.setItem('roundNumber', '1')
-    updateRoundNumber()
-    mainBtnFunction(8)
+    updateRoundNumber();
+    mainBtnFunction(8);
+    setGameData(1);
 }
 function updateRoundNumber(){
     let roundNumber = sessionStorage.getItem('roundNumber');
@@ -550,6 +562,7 @@ function updateRoundNumber(){
     roundNumberTitle.innerHTML = "Tour N°" + roundNumber;
     createLog(roundNumberTitle.innerHTML);
     sendMessageToDiscordFunction(`**${roundNumberTitle.innerHTML}**`);
+    setGameData(1);
 }
 function createLog(text){
     let logContainer = document.querySelector('.loging-container-scrollbox');
@@ -620,6 +633,7 @@ function moveMisterX(index, nextIndex){
         mainBtnFunction(nextIndex);
         updateLiveLocations();
     }
+    setGameData(1);
 }
 function moveTeams(index, nextIndex){
     if(index==1){
@@ -703,6 +717,7 @@ function moveTeams(index, nextIndex){
         sessionStorage.setItem('roundNumber', Number(roundNumber)+1);
         updateRoundNumber();
     }
+    setGameData(1);
 }
 function currentTime(){
     let currentDate = new Date();
@@ -717,3 +732,81 @@ function currentTime(){
     return timeReturned;
 }
 //End Main
+
+//Last Game Data
+function setGameData(index){
+
+    let roundNumber = sessionStorage.getItem('roundNumber');
+    let doesTeam2Exist = sessionStorage.getItem('doesTeam2Exist');
+    let doesTeam3Exist = sessionStorage.getItem('doesTeam3Exist');
+    let doesTeam4Exist = sessionStorage.getItem('doesTeam4Exist');
+    let loc1 = sessionStorage.getItem('misterx-location');
+    let loc2 = sessionStorage.getItem('team1-location');
+    let loc3 = sessionStorage.getItem('team2-location');
+    let loc4 = sessionStorage.getItem('team3-location');
+    let loc5 = sessionStorage.getItem('team4-location');
+    let T1PN1 = sessionStorage.getItem('team1PlayerName1');
+    let T1PN2 = sessionStorage.getItem('team1PlayerName2');
+    let T1PN3 = sessionStorage.getItem('team1PlayerName3');
+    let T2PN1 = sessionStorage.getItem('team2PlayerName1');
+    let T2PN2 = sessionStorage.getItem('team2PlayerName2');
+    let T2PN3 = sessionStorage.getItem('team2PlayerName3');
+    let T3PN1 = sessionStorage.getItem('team3PlayerName1');
+    let T3PN2 = sessionStorage.getItem('team3PlayerName2');
+    let T3PN3 = sessionStorage.getItem('team3PlayerName3');
+    let T4PN1 = sessionStorage.getItem('team4PlayerName1');
+    let T4PN2 = sessionStorage.getItem('team4PlayerName2');
+    let T4PN3 = sessionStorage.getItem('team4PlayerName3');
+
+    if (index == 1){
+        localStorage.setItem(`lastGameData`, `${roundNumber};${doesTeam2Exist};${doesTeam3Exist};${doesTeam4Exist};${loc1};${loc2};${loc3};${loc4};${loc5};${T1PN1};${T1PN2};${T1PN3};${T2PN1};${T2PN2};${T2PN3};${T3PN1};${T3PN2};${T3PN3};${T4PN1};${T4PN2};${T4PN3}`);
+        //* Round Number; Does Team 2 Exist; Does Team 3 Exist; Does Team 4 Exist; Mister X Location; Team 1 Location; Team 2 Location; Team 3 Location; Team 4 Location; Team 1 Player Name 1; T1PN2; T1PN3; T2PN1; T2PN2; T3PN3; T3PN1; T3PN2; T3PN3; T4PN1; T4PN2; T4PN3
+    }else if (index == 2){
+        localStorage.setItem(`lastGameData`, `0`);
+    }
+    //TODO: Add a btn to reset and restart without any settings or when gale is finished: roundNumber = 0
+}
+
+function checkGameData(){
+    let lastGameData = localStorage.getItem('lastGameData');
+    let lastGameDataArray = lastGameData.split(";");
+
+    if (lastGameDataArray[0] != 0){
+        sessionStorage.setItem('roundNumber', lastGameDataArray[0]);
+        sessionStorage.setItem('doesTeam2Exist', lastGameDataArray[1]);
+        sessionStorage.setItem('doesTeam3Exist', lastGameDataArray[2]);
+        sessionStorage.setItem('doesTeam4Exist', lastGameDataArray[3]);
+        sessionStorage.setItem('misterx-location', lastGameDataArray[4]);
+        sessionStorage.setItem('team1-location', lastGameDataArray[5]);
+        sessionStorage.setItem('team2-location', lastGameDataArray[6]);
+        sessionStorage.setItem('team3-location', lastGameDataArray[7]);
+        sessionStorage.setItem('team4-location', lastGameDataArray[8]);
+        sessionStorage.setItem('team1PlayerName1', lastGameDataArray[9]);
+        sessionStorage.setItem('team1PlayerName2', lastGameDataArray[10]);
+        sessionStorage.setItem('team1PlayerName3', lastGameDataArray[11]);
+        sessionStorage.setItem('team2PlayerName1', lastGameDataArray[12]);
+        sessionStorage.setItem('team2PlayerName2', lastGameDataArray[13]);
+        sessionStorage.setItem('team2PlayerName3', lastGameDataArray[14]);
+        sessionStorage.setItem('team3PlayerName1', lastGameDataArray[15]);
+        sessionStorage.setItem('team3PlayerName2', lastGameDataArray[16]);
+        sessionStorage.setItem('team3PlayerName3', lastGameDataArray[17]);
+        sessionStorage.setItem('team4PlayerName1', lastGameDataArray[18]);
+        sessionStorage.setItem('team4PlayerName2', lastGameDataArray[19]);
+        sessionStorage.setItem('team4PlayerName3', lastGameDataArray[20]);
+        updateLiveLocations();
+        updateRoundNumber();
+        mainBtnFunction(((lastGameDataArray[0]-1)+lastGameDataArray[0]+7));
+    }
+}
+
+let inputFieldsMainContainer = document.querySelectorAll('.main-container-frame-input');
+inputFieldsMainContainer.forEach((item) => {
+    item.addEventListener("keypress", (e) => {
+        console.log(e);
+        if (e.key === ";") {
+          e.preventDefault();
+        }
+    })
+});
+checkGameData();
+//End Last Game Data
