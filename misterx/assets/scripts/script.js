@@ -797,6 +797,7 @@ function checkGameData(){
         updateRoundNumber();
         let indexNumber = (lastGameDataArray[0]-1)+lastGameDataArray[0]+7;
         console.log(indexNumber);
+        console.log(lastGameDataArray[0]);
         mainBtnFunction(indexNumber);
     }
 }
