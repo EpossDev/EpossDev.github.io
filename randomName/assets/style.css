@@ -1,0 +1,38 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+html {
+    font-size: 62.5%;
+}
+body {
+    background: #000;
+    color: #fff;
+}
+a {
+    color: #fff;
+    text-decoration: none;
+}
+a:hover {
+    color: #32d74b;
+}
+p {
+    font-size: 2rem;
+}
+h1 {
+    font-size: 2.5rem;
+}
+h6 {
+    font-size: 1.5rem;
+}
+input {
+    width: 2rem;
+    height: 2rem;
+}
+.name-options {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    padding: 0.5rem;
+}
