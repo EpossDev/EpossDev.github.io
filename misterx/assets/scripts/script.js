@@ -1,4 +1,4 @@
-//V.1.1
+//V.1.1.1
 
 //Creating Variables
 let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
@@ -177,7 +177,7 @@ function updateLiveLocations(){
     if(loc1==loc2 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
         liveLocationsElementTwo.style.backgroundColor = `var(--dark-green)`;
-        if(team1PlayerName3=="false"){
+        if(team1PlayerName3=="false" || team1PlayerName3=="undefined"){
             gameWon(1, `Équipe 1 [${team1PlayerName1}, ${team1PlayerName2}]`);
         }else {
             gameWon(1, `Équipe 1 [${team1PlayerName1}, ${team1PlayerName2}, ${team1PlayerName3}]`);
@@ -186,7 +186,7 @@ function updateLiveLocations(){
     if(loc1==loc3 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
         liveLocationsElementThree.style.backgroundColor = `var(--dark-green)`;
-        if(team2PlayerName3=="false"){
+        if(team2PlayerName3=="false" || team2PlayerName3=="undefined"){
             gameWon(1, `Équipe 2 [${team2PlayerName1}, ${team2PlayerName2}]`);
         }else {
             gameWon(1, `Équipe 2 [${team2PlayerName1}, ${team2PlayerName2}, ${team2PlayerName3}]`);
@@ -195,7 +195,7 @@ function updateLiveLocations(){
     if(loc1==loc4 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
         liveLocationsElementFour.style.backgroundColor = `var(--dark-green)`;
-        if(team3PlayerName3=="false"){
+        if(team3PlayerName3=="false" || team3PlayerName3=="undefined"){
             gameWon(1, `Équipe 3 [${team3PlayerName1}, ${team3PlayerName2}]`);
         }else {
             gameWon(1, `Équipe 3 [${team3PlayerName1}, ${team3PlayerName2}, ${team3PlayerName3}]`);
@@ -204,7 +204,7 @@ function updateLiveLocations(){
     if(loc1==loc5 && !(loc1==0)){
         liveLocationsElementOne.style.backgroundColor = `var(--dark-green)`;
         liveLocationsElementFive.style.backgroundColor = `var(--dark-green)`;
-        if(team4PlayerName3=="false"){
+        if(team4PlayerName3=="false" || team4PlayerName3=="undefined"){
             gameWon(1, `Équipe 4 [${team4PlayerName1}, ${team4PlayerName2}]`);
         }else {
             gameWon(1, `Équipe 4 [${team4PlayerName1}, ${team4PlayerName2}, ${team4PlayerName3}]`);
@@ -454,27 +454,27 @@ function page6GetPlayersNames(){
     let T2 = ``;
     let T3 = ``;
     let T4 = ``;
-    if(T1P3=="false"){
+    if(T1P3=="false" || T1P3=="undefined"){
         T1 = `${T1P1}, ${T1P2}`;
     }else {
         T1 = `${T1P1}, ${T1P2}, ${T1P3}`;
     }
     if(doesTeam2Exist=="true"){
-        if(T2P3=="false"){
+        if(T2P3=="false" || T2P3=="undefined"){
             T2 = `<p>Équipe 2: ${T2P1}, ${T2P2}</p>`;
         }else {
             T2 = `<p>Équipe 2: ${T2P1}, ${T2P2}, ${T2P3}</p>`;
         }
     }
     if(doesTeam3Exist=="true"){
-        if(T3P3=="false"){
+        if(T3P3=="false" || T3P3=="undefined"){
             T3 = `<p>Équipe 3: ${T3P1}, ${T3P2}</p>`;
         }else {
             T3 = `<p>Équipe 3: ${T3P1}, ${T3P2}, ${T3P3}</p>`;
         }
     }
     if(doesTeam4Exist=="true"){
-        if(T4P3=="false"){
+        if(T4P3=="false" || T4P3=="undefined"){
             T4 = `<p>Équipe 4: ${T4P1}, ${T4P2}</p>`;
         }else {
             T4 = `<p>Équipe 4: ${T4P1}, ${T4P2}, ${T4P3}</p>`;
@@ -665,7 +665,7 @@ function moveTeams(index, nextIndex){
         let team4PlayerName2 = sessionStorage.getItem('team4PlayerName2');
         let team4PlayerName3 = sessionStorage.getItem('team4PlayerName3');
 
-        if(team1PlayerName3=="false"){
+        if(team1PlayerName3=="false" || team1PlayerName3=="undefined"){
             textLog1 = `🟢 L'Équipe 1 [${team1PlayerName1}, ${team1PlayerName2}], s'est déplacée vers la station N°${number1} !`;
             textMessage1 = `🟢 L'**Équipe 1 [${team1PlayerName1}, ${team1PlayerName2}]**, s'est déplacée vers la **station N°${number1}** !`;
         }else {
@@ -676,7 +676,7 @@ function moveTeams(index, nextIndex){
         sendMessageToDiscordFunction(textMessage1);
         sessionStorage.setItem('team1-location', number1);
         if(doesTeam2Exist=="true"){
-            if(team2PlayerName3=="false"){
+            if(team2PlayerName3=="false" || team2PlayerName3=="undefined"){
                 textLog2 = `🟢 L'Équipe 2 [${team2PlayerName1}, ${team2PlayerName2}], s'est déplacée vers la station N°${number2} !`;
                 textMessage2 = `🟢 L'**Équipe 2 [${team2PlayerName1}, ${team2PlayerName2}]**, s'est déplacée vers la **station N°${number2}** !`;
             }else {
@@ -688,7 +688,7 @@ function moveTeams(index, nextIndex){
             sessionStorage.setItem('team2-location', number2);
         }
         if(doesTeam3Exist=="true"){
-            if(team3PlayerName3=="false"){
+            if(team3PlayerName3=="false" || team3PlayerName3=="undefined"){
                 textLog3 = `🟢 L'Équipe 3 [${team3PlayerName1}, ${team3PlayerName2}], s'est déplacée vers la station N°${number3} !`;
                 textMessage3 = `🟢 L'**Équipe 3 [${team3PlayerName1}, ${team3PlayerName2}]**, s'est déplacée vers la **station N°${number3}** !`;
             }else {
@@ -700,7 +700,7 @@ function moveTeams(index, nextIndex){
             sessionStorage.setItem('team3-location', number3);
         }
         if(doesTeam4Exist=="true"){
-            if(team4PlayerName3=="false"){
+            if(team4PlayerName3=="false" || team4PlayerName3=="undefined"){
                 textLog4 = `🟢 L'Équipe 4 [${team4PlayerName1}, ${team4PlayerName2}], s'est déplacée vers la station N°${number4} !`;
                 textMessage4 = `🟢 L'**Équipe 4 [${team4PlayerName1}, ${team4PlayerName2}]**, s'est déplacée vers la **station N°${number4}** !`;
             }else {
