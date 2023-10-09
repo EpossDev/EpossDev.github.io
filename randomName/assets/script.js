@@ -1,9 +1,9 @@
+//V.1.0 Beta 2
 let names = [
     'Cloé',
     'Jéhanne',
     'Jérémy',
     'Lohan',
-    'Louison',
     'Manon',
     'Matis',
     'Noah',
@@ -41,5 +41,10 @@ function randomNameFunction(){
         nameContainer.innerHTML = `<p style="color:#32d74b;">${randomName}</p>`;
 
     }
+}
+function addName(){
+    let element = document.getElementById('newNameInput')
+    let name = element.value
+    generateHTMLElement(name)
 }
 generateAllNames()
