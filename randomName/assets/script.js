@@ -3,6 +3,7 @@ let names = [
     'Jéhanne',
     'Jérémy',
     'Lohan',
+    'Louison',
     'Manon',
     'Matis',
     'Noah',
