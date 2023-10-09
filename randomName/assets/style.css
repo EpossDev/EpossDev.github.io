@@ -1,3 +1,4 @@
+/* V.1.0 Beta 2*/
 * {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -35,4 +36,8 @@ input {
     align-items: center;
     font-size: 2rem;
     padding: 0.5rem;
+}
+#newNameInput {
+    width: 20rem;
+    height: 2rem;
 }
