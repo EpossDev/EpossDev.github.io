@@ -18,3 +18,6 @@ ___Random Name:___
 
 >V.1.0 Beta 1 [10/08/2023]:
 >- First Release, just to test if all the functions work, a better version is coming later !
+
+>V.1.0 Beta 2 [10/09/2023]:
+>- Added an input to add missing names to the list.
