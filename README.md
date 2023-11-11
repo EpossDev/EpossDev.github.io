@@ -23,4 +23,4 @@ ___Random Selector:___
 >- Added an input to add missing names to the list.
 
 >V.1.0 Beta 3 Pre-Release [11/11/2023]:
->- Changed name from Random Name to Random Selector, in wait of a new update coming soon.
+>- Changed name from Random Name to Random Selector, in wait of a new update (Beta 3 of the V.1.0) coming soon.
