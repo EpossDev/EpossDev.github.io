@@ -14,10 +14,13 @@ ___Mister X IRL:___
 >V.1.1.1 [10/08/2023]:
 >- Fixed a bug: When there was no third person in a team, the save progress system would then display "undefined", now when you reload the website, if there was no third player, nothing will be displayed in the player list.
 
-___Random Name:___
+___Random Selector:___
 
 >V.1.0 Beta 1 [10/08/2023]:
 >- First Release, just to test if all the functions work, a better version is coming later !
 
 >V.1.0 Beta 2 [10/09/2023]:
 >- Added an input to add missing names to the list.
+
+>V.1.0 Beta 2 [11/11/2023]:
+>- Changed name from Random Name to Random Selector, in wait of a new update coming soon.
