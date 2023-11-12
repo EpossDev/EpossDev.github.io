@@ -24,3 +24,10 @@ ___Random Selector:___
 
 >V.1.0 Beta 3 Pre-Release [11/11/2023]:
 >- Changed name from Random Name to Random Selector, in wait of a new update (Beta 3 of the V.1.0) coming soon.
+
+>V.1.0 Beta 3 [11/12/2023]:
+>- Brand new design.
+>- Added a custom seed random system (The seed depends of the day).
+>- Saving system: The elements you enter are saved in the local storage of the browser.
+>- Added a delete button.
+>- Sources for the backgropund and the random system can be found on the website or in the JavaScript files.
