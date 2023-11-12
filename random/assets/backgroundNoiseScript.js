@@ -5,12 +5,10 @@ let canvas = document.getElementById("background-canvas");
 let ctx = canvas.getContext("2d");
 w = ctx.canvas.width = window.innerWidth;
 h = ctx.canvas.height = window.innerHeight;
-ctx.filter = "blur(30px)";
 nt=0;
 window.onresize = function() {
   w = ctx.canvas.width = window.innerWidth;
   h = ctx.canvas.height = window.innerHeight;
-  ctx.filter = "blur(30px)";
 };
 function drawWave(n){
   nt+=0.002;
