@@ -1,6 +1,8 @@
-/* V.1.0 Beta 2*/
+/* V.1.0 Beta 3*/
 * {
-    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-family: 'Anonymous Pro', monospace;
     text-align: center;
 }
 html {
@@ -9,6 +11,9 @@ html {
 body {
     background: #000;
     color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 a {
     color: #fff;
@@ -21,23 +26,206 @@ p {
     font-size: 2rem;
 }
 h1 {
+    font-size: 3rem;
+}
+h2 {
     font-size: 2.5rem;
+    padding: 2rem 0;
 }
 h6 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    padding: 2rem 0;
 }
 input {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
 }
-.name-options {
+#page-content{
+    position: absolute;
+    margin: auto;
+    top: 4rem;
+}
+#page-content button{
+    color: #fff;
+    text-shadow: 0px 0px 15px black;
+    border-radius: 1rem;
+    padding: 1rem;
+    cursor: pointer;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+}
+#page-content button:hover{
+    opacity: 0.8;
+}
+#start-message-wrap{
+    display: flex;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+#start-message-container{
+    background: #222;
+    border-radius: 5px;
+    padding: 2rem;
+    box-shadow: 0px 0px 20px 10px #ff3126;
+}
+#start-message-container h1{
+    padding: 2.5rem 1rem;
+}
+#start-message-container p {
+    padding: 2.5rem 1rem;
+}
+#start-message-container button{
+    padding: 1rem;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: #1ec237;
+    color: #fff;
+    text-shadow: 0px 0px 15px black;
+    border-radius: 1rem;
+    cursor: pointer;
+    border: none;
+}
+#start-message-container button:hover{
+    opacity: 0.8;
+}
+.element-checkbox {
+    margin: 0.5rem;
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1rem 0;
+    background-color: rgba(33, 33, 33, 0.75);
+    border-radius: 0.75rem;
+}
+.element-checkbox:hover {
+    background-color: rgba(55, 55, 55, 0.75);
+}
+.element-checkbox input {
+    padding: 1rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+.element-checkbox label {
+    flex: 1;
+    padding: 1rem;
+    cursor: pointer;
+}
+#newElementInput {
+    width: 30rem;
+    height: 2rem;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
+    font-size: 2rem;
+}
+.deleteBtn {
+    background-color: #ff3126;
+    border-radius: 1rem;
+    padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 2rem;
-    padding: 0.5rem;
+    margin: 0 1rem;
+    cursor: pointer;
 }
-#newNameInput {
-    width: 20rem;
-    height: 2rem;
+.deleteBtn:hover {
+    opacity: 0.8;
+}
+.elements-checkboxes-container{
+    margin: 5rem 0;
+}
+
+@media screen and (max-width: 730px) {
+    #start-message-wrap{
+        top: 5rem;
+    }
+    #start-message-container{
+        margin: 2rem;
+    }
+}
+@media screen and (max-width: 650px) {
+    p {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+        padding: 1.5rem 0;
+    }
+    h6 {
+        font-size: 1.5rem;
+        padding: 1.5rem 0;
+    }
+    input {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+@media screen and (max-width: 400px) {
+    #start-message-container {
+        padding: 1rem;
+    }
+    #start-message-container h1{
+        font-size: 2.5rem;
+    }
+    #start-message-container p{
+        font-size: 1.5rem;
+    }
+    #start-message-wrap{
+        top: 2rem;
+    }
+    #start-message-container{
+        margin: 5rem;
+    }
+}
+@media screen and (max-width: 435px) {
+    #newElementInput {
+        width: 25rem;
+        height: 1.5rem;
+        margin: 2rem;
+    }
+    #page-content button{
+        font-size: 1.5rem;
+        margin: 0 2rem;
+    }
+}
+@media screen and (max-width: 320px) {
+    #newElementInput {
+        width: 15rem;
+    }
+    input {
+        width: 2rem;
+        height: 2rem;
+    }
+    .deleteBtn {
+        font-size: 2rem;
+        padding: 0.5rem;
+    }
+    p {
+        font-size: 1.5rem;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+    h6 {
+        font-size: 1.5rem;
+        padding: 1rem 0;
+    }
+}
+@media screen and (max-width: 250px) {
+    #start-message-container{
+        margin: 8rem;
+    }
 }
