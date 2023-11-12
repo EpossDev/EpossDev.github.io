@@ -3,24 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Qui va chercher la cruche ?</title>
+    <title>Sélecteur Aléatoire</title>
     <link rel="stylesheet" href="assets/style.css">
+    <script src="https://kit.fontawesome.com/1d33814218.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>Qui va chercher la cruche ?</h1>
-    <h2>Sélectionnez les personnes présentes: </h2>
-    <div class="name-options-container"></div>
-    <br>
-    <h2>Entrez d'autres prénoms si besoin (un par un):</h2>
-    <input type="text" id="newNameInput" name="newNameInput">
-    <br>
-    <br>
-    <button onclick="addName()">Ajouter un prénom à la liste</button>
-    <br>
-    <br>
-    <button onclick="randomNameFunction()">Sélectionner un prénom aléatoirement</button>
-    <div class="random-name-container"></div>
-    <h6>App made by <a href="https://github.com/EpossDev/EpossDev.github.io" target="_blank">Valentin</a><br>V.1.0 Beta 2<br>This website is in beta, this is not the final version.</h6>
+    <canvas id="background-canvas" style="overflow: hidden;"></canvas>
+    <div id="page-content">
+        <div id="start-message-wrap">
+            <div id="start-message-container">
+                <h1>Bienvenue sur le Sélecteur Aléatoire</h1>
+                <p>Cette application utilise le stockage local de votre navigateur, afin d'enregistrer les éléments que vous entrez.<br></p><p style="color: #ff4f44; padding: 0 1rem; font-weight: bold;">C'est pour cela que nous vous demandons d'utiliser ce site dans votre navigateur habituel et en dehors du mode privé.</p><br><p>De plus aucune donnée personnelle n'est collectée, tout est stocké sur votre appareil.<br><br>Merci de votre compréhension.</p>
+                <button onclick="localStorage.setItem('RandomSelector-startMessage', true);document.getElementById('start-message-wrap').remove();">COMPRIS</button>
+            </div>
+        </div>
+        <h1>Sélecteur Aléatoire</h1>
+        <h2>Sélectionnez les éléments<br>que vous souhaitez comprendre dans le tirage:</h2>
+        <div class="elements-checkboxes-container"></div>
+        <br>
+        <h2>Entrez d'autres éléments si besoin (un par un):</h2>
+        <input type="text" id="newElementInput" name="newElementInput">
+        <br>
+        <br>
+        <button onclick="addElementToList()" style="background-color: #007af5;">Ajouter un élément à la liste</button>
+        <br>
+        <br>
+        <button onclick="randomElementFunction(this)" style="background-color: #00bdb4;">Sélectionner un élément aléatoirement</button>
+        <div class="random-element-container"></div>
+        <h6>App made by <a href="https://github.com/EpossDev/EpossDev.github.io" target="_blank">Valentin</a><br>V.1.0 Beta 3<br>This website is in beta, this is not the final version.<br>Background inspired from <a href="https://codepen.io/Tibixx/pen/xNZGyK" target="_blank">Aurora Borealis by Tibixx on Codepen</a>.</h6>
+    </div>
+    <script src="assets/backgroundNoiseScript.js"></script>
     <script src="assets/script.js"></script>
 </body>
+
 </html>
