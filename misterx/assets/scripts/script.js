@@ -1,12 +1,16 @@
-//V.1.1.1
+//V.1.2.0
 
 //Creating Variables
+let isDarkModeActive = localStorage.getItem('isDarkModeActive');
 let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
 let sendNotificationsToDiscord = localStorage.getItem('sendNotificationsToDiscord');
 let sendLogingToDiscord = localStorage.getItem('sendLogingToDiscord');
 let lastGameData = localStorage.getItem('lastGameData');
 
 function createVariables() {
+    if (!(isDarkModeActive)){
+        localStorage.setItem('isDarkModeActive', 'false')
+    }
     if (!(areCardinalDirectionsActive)){
         localStorage.setItem('areCardinalDirectionsActive', 'true')
     }
@@ -31,6 +35,23 @@ function createVariables() {
 }
 createVariables();
 
+function setTheme(){
+    let isDarkModeActive = localStorage.getItem('isDarkModeActive');
+    if (isDarkModeActive=='true'){
+        document.documentElement.style.setProperty('--primary', '#000');
+        document.documentElement.style.setProperty('--secondary', '#1c1c1c');
+        document.documentElement.style.setProperty('--tertiary', '#2c2c2c');
+        document.documentElement.style.setProperty('--text-primary', '#fff');
+        document.documentElement.style.setProperty('--text-secondary', '#ccc');
+    }else if(isDarkModeActive=='false'){
+        document.documentElement.style.setProperty('--primary', '#fff');
+        document.documentElement.style.setProperty('--secondary', '#f0f0f0');
+        document.documentElement.style.setProperty('--tertiary', '#fff');
+        document.documentElement.style.setProperty('--text-primary', '#000');
+        document.documentElement.style.setProperty('--text-secondary', '#555');
+    }
+}
+setTheme();
 //Intro
 function deleteIntroContainer() {
     let container = document.querySelector('.introContainer');
@@ -64,15 +85,23 @@ const menuSettingsSwitchContainerFour = document.getElementById('menu-settings-s
 const menuSettingsSwitchBtnFour = document.getElementById('menu-settings-switch-btn-four');
 
 function updateSettingsSwitchBtn(){
+    let isDarkModeActive = localStorage.getItem('isDarkModeActive');
     let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
     let sendNotificationsToDiscord = localStorage.getItem('sendNotificationsToDiscord');
     let sendLogingToDiscord = localStorage.getItem('sendLogingToDiscord');
-    if(areCardinalDirectionsActive=='true'){
+    if(isDarkModeActive=='true'){
         menuSettingsSwitchContainerOne.classList.add('menu-settings-switch-container-true');
         menuSettingsSwitchBtnOne.classList.add('menu-settings-switch-btn-true');
-    }else if(areCardinalDirectionsActive=='false'){
+    }else if(isDarkModeActive=='false'){
         menuSettingsSwitchContainerOne.classList.remove('menu-settings-switch-container-true');
         menuSettingsSwitchBtnOne.classList.remove('menu-settings-switch-btn-true');
+    }
+    if(areCardinalDirectionsActive=='true'){
+        menuSettingsSwitchContainerTwo.classList.add('menu-settings-switch-container-true');
+        menuSettingsSwitchBtnTwo.classList.add('menu-settings-switch-btn-true');
+    }else if(areCardinalDirectionsActive=='false'){
+        menuSettingsSwitchContainerTwo.classList.remove('menu-settings-switch-container-true');
+        menuSettingsSwitchBtnTwo.classList.remove('menu-settings-switch-btn-true');
     }
     if(sendNotificationsToDiscord=='true'){
         menuSettingsSwitchContainerThree.classList.add('menu-settings-switch-container-true');
@@ -91,7 +120,19 @@ function updateSettingsSwitchBtn(){
 }
 updateSettingsSwitchBtn();
 
-menuSettingsSwitchBtnOne.addEventListener('click', function(){
+menuSettingsSwitchContainerOne.addEventListener('click', function(){
+    let isDarkModeActive = localStorage.getItem('isDarkModeActive');
+    if(isDarkModeActive=='true'){
+        localStorage.setItem('isDarkModeActive', 'false')
+        updateSettingsSwitchBtn();
+        setTheme();
+    }else if(isDarkModeActive=='false'){
+        localStorage.setItem('isDarkModeActive', 'true')
+        updateSettingsSwitchBtn();
+        setTheme();
+    }
+})
+menuSettingsSwitchContainerTwo.addEventListener('click', function(){
     let areCardinalDirectionsActive = localStorage.getItem('areCardinalDirectionsActive');
     if(areCardinalDirectionsActive=='true'){
         localStorage.setItem('areCardinalDirectionsActive', 'false')
@@ -101,7 +142,7 @@ menuSettingsSwitchBtnOne.addEventListener('click', function(){
         updateSettingsSwitchBtn();
     }
 })
-menuSettingsSwitchBtnThree.addEventListener('click', function(){
+menuSettingsSwitchContainerThree.addEventListener('click', function(){
     let sendNotificationsToDiscord = localStorage.getItem('sendNotificationsToDiscord');
     if(sendNotificationsToDiscord=='true'){
         localStorage.setItem('sendNotificationsToDiscord', 'false')
@@ -111,7 +152,7 @@ menuSettingsSwitchBtnThree.addEventListener('click', function(){
         updateSettingsSwitchBtn();
     }
 })
-menuSettingsSwitchBtnFour.addEventListener('click', function(){
+menuSettingsSwitchContainerFour.addEventListener('click', function(){
     let sendLogingToDiscord = localStorage.getItem('sendLogingToDiscord');
     if(sendLogingToDiscord=='true'){
         localStorage.setItem('sendLogingToDiscord', 'false')
@@ -322,28 +363,22 @@ function mainBtnFunction(index){
 }
 function selectNumberOfTeam(){
     let dropdown = document.getElementById('numberOfTeamSelect');
-    let liveLocationElementTeam2 = document.getElementById('live-locations-element-three');
-    let liveLocationElementTeam3 = document.getElementById('live-locations-element-four');
-    let liveLocationElementTeam4 = document.getElementById('live-locations-element-five');
     if(dropdown.value == "oneTeam"){
         sessionStorage.setItem('doesTeam2Exist', 'false');
         sessionStorage.setItem('doesTeam3Exist', 'false');
         sessionStorage.setItem('doesTeam4Exist', 'false');
-        liveLocationElementTeam2.remove();
-        liveLocationElementTeam3.remove();
-        liveLocationElementTeam4.remove();
+        removeLiveLocations(1);
     }else if (dropdown.value == "twoTeams"){
         sessionStorage.setItem('doesTeam2Exist', 'true');
         sessionStorage.setItem('doesTeam3Exist', 'false');
         sessionStorage.setItem('doesTeam4Exist', 'false');
-        liveLocationElementTeam3.remove();
-        liveLocationElementTeam4.remove();
+        removeLiveLocations(2);
     }
     else if (dropdown.value == "threeTeams"){
         sessionStorage.setItem('doesTeam2Exist', 'true');
         sessionStorage.setItem('doesTeam3Exist', 'true');
         sessionStorage.setItem('doesTeam4Exist', 'false');
-        liveLocationElementTeam4.remove();
+        removeLiveLocations(3);
     }
     else if (dropdown.value == "fourTeams"){
         sessionStorage.setItem('doesTeam2Exist', 'true');
@@ -351,6 +386,21 @@ function selectNumberOfTeam(){
         sessionStorage.setItem('doesTeam4Exist', 'true');
     }
     setGameData(1);
+}
+function removeLiveLocations(numberOfTeam){
+    let liveLocationElementTeam2 = document.getElementById('live-locations-element-three');
+    let liveLocationElementTeam3 = document.getElementById('live-locations-element-four');
+    let liveLocationElementTeam4 = document.getElementById('live-locations-element-five');
+    if(numberOfTeam==1){
+        liveLocationElementTeam2.remove();
+        liveLocationElementTeam3.remove();
+        liveLocationElementTeam4.remove();
+    }else if(numberOfTeam==2){
+        liveLocationElementTeam3.remove();
+        liveLocationElementTeam4.remove();
+    }else if(numberOfTeam==3){
+        liveLocationElementTeam4.remove();
+    }
 }
 function selectPlayersNames(index){
     let doesTeam2Exist = sessionStorage.getItem('doesTeam2Exist');
@@ -568,7 +618,7 @@ function createLog(text){
     let logContainer = document.querySelector('.loging-container-scrollbox');
     let HTMLelement = document.createElement('p');
     let time = currentTime();
-    HTMLelement.innerHTML = `${time} ${text}`;
+    HTMLelement.innerHTML = `<i>${time}</i> ${text}`;
     logContainer.appendChild(HTMLelement);
 
     let sendLogingToDiscordVar = localStorage.getItem('sendLogingToDiscord');
@@ -795,6 +845,16 @@ function checkGameData(){
         let index = (indexNumber-1)+indexNumber+7;
         mainBtnFunction(index);
         updateLiveLocations();
+        if(lastGameDataArray[1]=='true' && lastGameDataArray[2]=='true' && lastGameDataArray[3]=='false'){
+            removeLiveLocations(3);
+        }else if(lastGameDataArray[1]=='true' && lastGameDataArray[2]=='false'){
+            removeLiveLocations(2);
+        }
+        else if(lastGameDataArray[1]=='false'){
+            removeLiveLocations(1);
+        }
+        let liveAnimationBtn = document.querySelector('.menu-locations-span-two');
+        liveAnimationBtn.classList.toggle('menu-locations-span-two-start');
     }
 }
 checkGameData();
