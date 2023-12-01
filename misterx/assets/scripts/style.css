@@ -1,19 +1,18 @@
-/*V.1.1.1*/
+/*V.1.2.0*/
 /*Intro and the menu were inspired by Codegrid on YouTube https://www.youtube.com/@codegrid */
 :root {
-    --dark-red: rgb(255,69,58);
-    --dark-orange: rgb(255,159,10);
-    --dark-yellow: rgb(255,214,10);
-    --dark-green: rgb(50,215,75);
-    --dark-mint: rgb(102,212,207);
-    --dark-teal: rgb(106,196,220);
-    --dark-cyan: rgb(90,200,245);
-    --dark-blue: rgb(10,132,255);
-    --dark-indigo: rgb(94,92,230);
-    --dark-purple: rgb(191,90,242);
-    --dark-pink: rgb(255,55,95);
-    --dark-brown: rgb(172,142,104);
-    --dark-gray: rgb(152,152,157);
+    --primary: #fff; /* #000 */
+    --secondary: #f0f0f0; /* #1c1c1c */
+    --tertiary: #fff; /* #2c2c2c */
+    --text-primary: #000; /* #fff */
+    --text-secondary: #555; /* #ccc */
+    --red: rgb(255,59,48);
+    --orange: rgb(255,149,0);
+    --green: rgb(52,199,89);
+    --mint: rgb(0,199,190);
+    --blue: rgb(0,122,255);
+    --indigo: rgb(88,86,214);
+    --purple: rgb(175,82,222);
 }
 
 html {
@@ -27,16 +26,17 @@ html {
     list-style: none;
 }
 body {
-    background-color: #000;
-    color: #fff;
+    background-color: var(--primary);
+    color: var(--text-primary);
 }
 
 nav {
     display: flex;
     justify-content: center;
+    padding: 1.5rem 0;
+    background-color: var(--secondary);
 }
 nav h1 {
-    padding-top: 1.4rem;
     font-size: 2.5rem;
     z-index: 999;
 }
@@ -49,12 +49,14 @@ nav h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #222222;
+    background-color: var(--primary);
     animation: introSlideOutContainer 4s cubic-bezier(0.97, 0.01, 0.36, 0.99) 2.8s;
     animation-fill-mode: forwards;
+    border-bottom: 0.1rem solid var(--text-primary);
+    overflow: hidden;
 }
 .introTextContainer {
-    color: #fff;
+    color: var(--text-primary);
     position: absolute;
     overflow: hidden;
     z-index: 999;
@@ -65,7 +67,7 @@ nav h1 {
 }
 .introText1, .introText3, .introText4, .introText8, .introText9, .introText11 {
     color: rgba(0, 0, 0, 0);
-    -webkit-text-stroke: 0.1rem #fff;
+    -webkit-text-stroke: 0.1rem var(--text-primary);
 }
 @keyframes introTextBlink {
     0% {
@@ -178,7 +180,6 @@ nav h1 {
 #menu-locations-btn {
     position: absolute;
     left: 2rem;
-    top: 1.4rem;
     width: 3rem;
     height: 3rem;
     cursor: pointer;
@@ -206,14 +207,14 @@ nav h1 {
 }
 @keyframes locationsLiveAnimation {
     from, to {
-        background-color: var(--dark-red);
+        background-color: var(--red);
     }
     50% {
         background-color: rgba(255,69,58, 0);
     }
 }
 .menu-container {
-    background-color: #000;
+    background-color: var(--secondary);
     transition: all 0.5s ease-out;
     height: 100vh;
     position: fixed;
@@ -225,7 +226,6 @@ nav h1 {
 #menu-toggle {
     position: absolute;
     right: 2rem;
-    top: 1.4rem;
     z-index: 999;
     width: 4rem;
     height: 4rem;
@@ -234,7 +234,7 @@ nav h1 {
 }
 .menu-toggle-span {
     height: 0.3rem;
-    background: #fff;
+    background: var(--text-primary);
     transition: all 0.3s ease-out;
     margin: 0.5rem auto;
 }
@@ -255,7 +255,7 @@ nav h1 {
     margin: 10rem 5%;
 }
 .menu-settings-box {
-    background-color: #333;
+    background-color: var(--tertiary);
     width: 95%;
     border-radius: 0.5rem;
     padding: 1rem;
@@ -276,19 +276,19 @@ nav h1 {
     right: 10%;
     border-radius: 10rem;
     transition: all 0.5s ease-in-out;
+    cursor: pointer;
 }
 .menu-settings-switch-container-true {
-    background-color: var(--dark-green);
+    background-color: var(--green);
 }
 .menu-settings-switch-btn {
     position: absolute;
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
     background-color: #fff;
     border-radius: 10rem;
-    top: 0;
-    left: -0.1rem;
-    cursor: pointer;
+    top: 0.25rem;
+    left: 0.25rem;
     transition: all 0.5s ease-in-out;
 }
 .menu-settings-switch-btn-true {
@@ -305,14 +305,14 @@ nav h1 {
 }
 .menu-settings-box-arrow-one {
     height: 0.3rem;
-    background: #fff;
+    background: var(--text-primary);
     transition: all 0.3s ease-out;
     margin: 0.5rem auto;
     transform: rotate(45deg) translateX(0.2rem) translateY(0.2rem);
 }
 .menu-settings-box-arrow-two {
     height: 0.3rem;
-    background: #fff;
+    background: var(--text-primary);
     transition: all 0.3s ease-out;
     margin: 0.5rem auto;
     transform: rotate(-45deg) translateX(-0.5rem) translateY(0.5rem);
@@ -326,19 +326,20 @@ nav h1 {
     position: relative;
     bottom: 0;
     font-size: 2rem;
+    color: var(--text-secondary);
 }
 #appVersionNumber a {
-    color: #fff;
+    color: var(--text-secondary);
 }
 #appVersionNumber a:hover {
     transition: 0.5s;
-    color: var(--dark-green);
+    color: var(--green);
 }
 /*End Menu*/
 
 /*Loging*/
 .loging-container{
-    background-color: #222;
+    background-color: var(--tertiary);
     width: 100%;
     height: 100%;
     position: fixed;
@@ -355,7 +356,7 @@ nav h1 {
     font-size: 2.5rem;
 }
 #loging-container-close {
-    color: var(--dark-blue);
+    color: var(--blue);
     font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
@@ -364,10 +365,11 @@ nav h1 {
     margin-top: 1rem;
 }
 .loging-container-scrollbox {
-    background-color: #000;
+    background-color: var(--primary);
     height: 70%;
     overflow-y: auto;
     margin: 0 2.5rem;
+    border: 0.1rem solid var(--text-secondary);
 }
 .loging-container-scrollbox p {
     font-size: 1.5rem;
@@ -388,7 +390,7 @@ nav h1 {
     bottom: 0;
 }
 .live-locations-div-topbar {
-    background-color: #111;
+    background-color: var(--secondary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -396,7 +398,7 @@ nav h1 {
     cursor: pointer;
 }
 .live-locations-div-topbar-span {
-    background-color: #fff;
+    background-color: var(--text-primary);
     height: 0.5rem;
     width: 50%;
     margin: 0.5rem 0;
@@ -406,7 +408,7 @@ nav h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #000;
+    background-color: var(--secondary);
 }
 .live-locations-element {
     padding: 0.5rem 0;
@@ -416,7 +418,7 @@ nav h1 {
     position: relative;
     width: 7rem;
     height: 6rem;
-    background: #222;
+    background: var(--tertiary);
     margin: 1rem;
     border-radius: 1rem;
 }
@@ -425,11 +427,12 @@ nav h1 {
     position: absolute;
     width: 100%;
     height: 3rem;
-    background: #333;
+    background: var(--tertiary);
     font-size: 1.25rem;
     line-height: 3rem;
     border-radius: 0 0 1rem 1rem;
     bottom: 0;
+    border-top: 0.1rem solid var(--text-secondary);
 }
 .live-locations-element#live-locations-element-one:before {
     content: 'Mister X';
@@ -455,10 +458,7 @@ nav h1 {
 }
 .main-container-frame {
     margin: 1rem 0 11rem 0;
-    padding: 0.5rem;
-    width: 90%;
-    background-color: #222;
-    border-radius: 1rem;
+    padding: 0 2.5rem;
 }
 .main-container-frame-div {
     text-align: center;
@@ -475,25 +475,25 @@ nav h1 {
     cursor: pointer;
 }
 #btn-blue {
-    background-color: var(--dark-blue);
+    background-color: var(--blue);
 }
 #btn-green {
-    background-color: var(--dark-green);
+    background-color: var(--green);
 }
 #btn-purple {
-    background-color: var(--dark-purple);
+    background-color: var(--purple);
 }
 #btn-indigo {
-    background-color: var(--dark-indigo);
+    background-color: var(--indigo);
 }
 #btn-mint {
-    background-color: var(--dark-mint);
+    background-color: var(--mint);
 }
 #btn-red {
-    background-color: var(--dark-red);
+    background-color: var(--red);
 }
 #btn-orange {
-    background-color: var(--dark-orange);
+    background-color: var(--orange);
 }
 .main-container-frame-select {
     margin: 1rem 0.5rem;
@@ -515,10 +515,9 @@ nav h1 {
 #roundTitle {
     text-align: center;
     font-size: 3rem;
-    margin: 1rem 0;
+    padding: 1rem 0;
     border: #fff;
     border-top: 0.1rem solid #fff;
-    padding-top: 0.5rem;
 }
 
 /*Responsive*/
