@@ -14,6 +14,11 @@ ___Mister X IRL:___
 >V.1.1.1 [10/08/2023]:
 >- Fixed a bug: When there was no third person in a team, the save progress system would then display "undefined", now when you reload the website, if there was no third player, nothing will be displayed in the player list.
 
+>V.1.2.0 [12/01/2023]:
+>- Added Light Mode (and adjusted the design of some elements).
+>- Added Intro and Menu Toggle Button credits in the menu.
+>- Now the Live Locations of the teams that don't exist, are removed when you rejoin the website.
+
 ___Random Selector:___
 
 >V.1.0 Beta 1 [10/08/2023]:
