@@ -1,11 +1,11 @@
 /*V.1.2.0*/
 /*Intro and the menu were inspired by Codegrid on YouTube https://www.youtube.com/@codegrid */
 :root {
-    --primary: #fff; /* #000 */
-    --secondary: #f0f0f0; /* #1c1c1c */
-    --tertiary: #fff; /* #2c2c2c */
-    --text-primary: #000; /* #fff */
-    --text-secondary: #555; /* #ccc */
+    --primary: #fff;
+    --secondary: #f0f0f0;
+    --tertiary: #fff;
+    --text-primary: #000;
+    --text-secondary: #555;
     --red: rgb(255,59,48);
     --orange: rgb(255,149,0);
     --green: rgb(52,199,89);
@@ -191,7 +191,7 @@ nav h1 {
 .menu-locations-span-one {
     width: 100%;
     height: 100%;
-    background-color: rgba(255,69,58, 0.7);
+    background-color: rgba(255,59,48, 0.7);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -210,7 +210,7 @@ nav h1 {
         background-color: var(--red);
     }
     50% {
-        background-color: rgba(255,69,58, 0);
+        background-color: rgba(255,59,48, 0);
     }
 }
 .menu-container {
@@ -269,7 +269,7 @@ nav h1 {
     width: 100%;
 }
 .menu-settings-switch-container{
-    background-color: #111;
+    background-color: var(--secondary);
     width: 6rem;
     height: 3rem;
     position: fixed;
@@ -516,8 +516,6 @@ nav h1 {
     text-align: center;
     font-size: 3rem;
     padding: 1rem 0;
-    border: #fff;
-    border-top: 0.1rem solid #fff;
 }
 
 /*Responsive*/
