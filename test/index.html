@@ -7,5 +7,14 @@
 <body>
   <a href="./assets/index2.html" target="_blank"></a>
   <button onclick"mainFunction()">Click here !</button>
+  <scipt>
+    var exampleSocket = new WebSocket("ws://epossdev.github.io/test");
+
+    function mainFunction(){
+    exampleSocket.onopen = function (event) {
+    exampleSocket.send("Test Text Sent");
+    };
+    }
+  </scipt>
 </body>
 </html>
