@@ -86,7 +86,7 @@ let currentDate = new Date();
 let year = currentDate.getFullYear();
 let month = currentDate.getMonth();
 let day = currentDate.getDate();
-let numberToUse = Math.floor(`${year}${month}${day}`);
+let numberToUse = Math.floor(`${year}${day}${month}`);
 //CustomRandom function created by MichalBe on https://michalbe.blogspot.com/2011/02/javascript-random-numbers-with-custom_23.html
 var CustomRandom = function(nseed) {    
     var seed,
