@@ -7,7 +7,7 @@
 <body>
   <h1 id="testId">Hi, This is a test</h1>
   <script>
-    var exampleSocket = new WebSocket("ws://epossdev.github.io/test");
+    var exampleSocket = new WebSocket("wss://epossdev.github.io/test");
     exampleSocket.onmessage = function (event) {
       console.log(event.data);
       let e = document.getElementById('testId')
