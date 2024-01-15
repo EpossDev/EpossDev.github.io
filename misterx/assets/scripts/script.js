@@ -591,7 +591,7 @@ function generateLocations() {
         ${T2}
         ${T3}
         ${T4}
-        <p>Lorsque toutes les équipes se seront déplacées vers leur point de départ, et que chaque équipe se sera connecté à l'appel, cliquez sur le bouton ci-dessous:<br>(Pour votre information, le sélecteur de direction cardinal est affiché même si vous l'avez désactivé dans les paramètres, vous devrez tout de même le compléter, cependant les équipes ne recevront pas cette information, elle est juste utilisée dans le loging.)</p>
+        <p>Lorsque toutes les équipes se seront déplacées vers leur point de départ, et que chaque équipe se sera connecté à l'appel, cliquez sur le bouton ci-dessous:<br>(Pour votre information, le sélecteur de direction cardinal est affiché même si vous l'avez désactivé dans les paramètres, vous devrez tout de même le compléter, cependant les équipes ne recevront pas cette information, elle est juste utilisée dans le logging.)</p>
         <button id="btn-green" class="main-container-frame-btn" onclick="startGame()">Commencer la partie</button>
         </div>`;
     mainBtnFunction(7);
