@@ -3,29 +3,54 @@
     --red: rgb(255,69,58);
     --green: rgb(50,215,75);
     --blue: rgb(10,132,255);
-    --sky1: linear-gradient(to bottom, hsl(244, 89%, 4%, 1.0) 80%, hsl(256, 20%, 11%, 1.0) 100%);
-    --sky2: linear-gradient(to bottom, hsl(244, 89%, 4%, 1.0) 60%, hsl(240, 16%, 15%, 1.0) 100%);
-    --sky3: linear-gradient(to bottom, hsl(244, 89%, 4%, 1.0) 10%, hsl(240, 17%, 27%, 1.0) 100%);
-    --sky4: linear-gradient(to bottom, hsl(240, 16%, 15%, 1.0) 0%, hsl(240, 18%, 39%, 1.0) 100%);
-    --sky5: linear-gradient(to bottom, hsl(240, 18%, 31%, 1.0) 0%, hsl(238, 26%, 55%, 1.0) 75%, hsl(263, 24%, 57%, 1.0) 100%);
-    --sky6: linear-gradient(to bottom, hsl(242, 18%, 35%, 1.0) 0%, hsl(238, 26%, 55%, 1.0) 50%, hsl(336, 43%, 66%, 1.0) 100%);
-    --sky7: linear-gradient(to bottom, hsl(236, 37%, 60%, 1.0) 0%, hsl(242, 31%, 63%, 1.0) 60%, hsl(326, 58%, 80%, 1.0) 100%); 
-    --sky8: linear-gradient(to bottom, hsl(211, 55%, 68%, 1.0) 0%, hsl(1, 59%, 81%, 1.0) 100%);
-    --sky9: linear-gradient(to bottom, hsl(211, 88%, 78%, 1.0) 0%, hsl(197, 100%, 83%, 1.0) 65%, hsl(236, 58%, 81%, 1.0) 100%);
-    --sky10: linear-gradient(to bottom, hsl(198, 100%, 86%, 1.0) 0%, hsl(198, 100%, 79%, 1.0) 100%);
-    --sky11: linear-gradient(to bottom, hsl(197, 98%, 80%, 1.0) 0%, hsl(197, 95%, 69%, 1.0) 100%);
-    --sky12: linear-gradient(to bottom, hsl(197, 98%, 78%, 1.0) 0%, hsl(198, 62%, 52%, 1.0) 100%);
-    --sky13: linear-gradient(to bottom, hsl(197, 79%, 63%, 1.0) 0%, hsl(206, 65%, 40%, 1.0) 100%);
-    --sky14: linear-gradient(to bottom, hsl(200, 62%, 47%, 1.0) 0%, hsl(212, 65%, 34%, 1.0) 100%);
-    --sky15: linear-gradient(to bottom, hsl(205, 65%, 41%, 1.0) 0%, hsl(212, 65%, 34%, 1.0) 65%, hsl(195, 18%, 44%, 1.0) 100%);
-    --sky16: linear-gradient(to bottom, hsl(212, 65%, 34%, 1.0) 0%, hsl(210, 57%, 34%, 1.0) 50%, hsl(70, 23%, 55%, 1.0) 100%);
-    --sky17: linear-gradient(to bottom, hsl(212, 65%, 34%, 1.0) 0%, hsl(145, 10%, 49%, 1.0) 50%, hsl(48, 76%, 64%, 1.0) 100%);
-    --sky18: linear-gradient(to bottom, hsl(212, 70%, 27%, 1.0) 0%, hsl(187, 13%, 39%, 1.0) 35%, hsl(47, 69%, 63%, 1.0) 60%, hsl(21, 51%, 46%, 1.0) 100%);
-    --sky19: linear-gradient(to bottom, hsl(202, 58%, 20%, 1.0) 0%, hsl(60, 5%, 29%, 1.0) 35%, hsl(28, 63%, 47%, 1.0) 60%, hsl(21, 85%, 39%, 1.0) 75%, hsl(15, 74%, 11%, 1.0) 100%);
-    --sky20: linear-gradient(to bottom, hsl(201, 69%, 9%, 1.0) 0%, hsl(201, 69%, 9%, 1.0) 35%, hsl(20, 77%, 31%, 1.0) 75%, hsl(20, 85%, 8%, 1.0) 100%);
-    --sky21: linear-gradient(to bottom, hsl(204, 88%, 3%, 1.0) 30%, hsl(18, 78%, 20%, 1.0) 75%, hsl(15, 74%, 11%, 1.0) 100%);
-    --sky22: linear-gradient(to bottom, hsl(23, 80%, 2%, 1.0) 50%, hsl(20, 85%, 16%, 1.0) 100%);
-    --sky23: linear-gradient(to bottom, hsl(240, 100%, 2%, 1.0) 75%, hsl(23, 100%, 4%, 1.0) 100%);
+    --sky-main0: hsl(240, 100%, 2%, 1.0);
+    --sky-main1: hsl(244, 89%, 4%, 1.0);
+    --sky-main2: hsl(244, 89%, 4%, 1.0);
+    --sky-main3: hsl(244, 89%, 4%, 1.0);
+    --sky-main4: hsl(240, 16%, 15%, 1.0);
+    --sky-main5: hsl(240, 18%, 31%, 1.0);
+    --sky-main6: hsl(242, 18%, 35%, 1.0);
+    --sky-main7: hsl(236, 37%, 60%, 1.0); 
+    --sky-main8: hsl(211, 55%, 68%, 1.0);
+    --sky-main9: hsl(211, 88%, 78%, 1.0);
+    --sky-main10: hsl(198, 100%, 86%, 1.0);
+    --sky-main11: hsl(197, 98%, 80%, 1.0);
+    --sky-main12: hsl(197, 98%, 78%, 1.0);
+    --sky-main13: hsl(197, 79%, 63%, 1.0);
+    --sky-main14: hsl(200, 62%, 47%, 1.0);
+    --sky-main15: hsl(205, 65%, 41%, 1.0);
+    --sky-main16: hsl(212, 65%, 34%, 1.0);
+    --sky-main17: hsl(212, 65%, 34%, 1.0);
+    --sky-main18: hsl(212, 70%, 27%, 1.0);
+    --sky-main19: hsl(202, 58%, 20%, 1.0);
+    --sky-main20: hsl(201, 69%, 9%, 1.0);
+    --sky-main21: hsl(204, 88%, 3%, 1.0);
+    --sky-main22: hsl(23, 80%, 2%, 1.0);
+    --sky-main23: hsl(240, 100%, 2%, 1.0);
+    --sky0: linear-gradient(to bottom, var(--sky-main0) 75%, hsl(23, 100%, 4%, 1.0) 100%);
+    --sky1: linear-gradient(to bottom, var(--sky-main1) 80%, hsl(256, 20%, 11%, 1.0) 100%);
+    --sky2: linear-gradient(to bottom, var(--sky-main2) 60%, hsl(240, 16%, 15%, 1.0) 100%);
+    --sky3: linear-gradient(to bottom, var(--sky-main3) 10%, hsl(240, 17%, 27%, 1.0) 100%);
+    --sky4: linear-gradient(to bottom, var(--sky-main4) 0%, hsl(240, 18%, 39%, 1.0) 100%);
+    --sky5: linear-gradient(to bottom, var(--sky-main5) 0%, hsl(238, 26%, 55%, 1.0) 75%, hsl(263, 24%, 57%, 1.0) 100%);
+    --sky6: linear-gradient(to bottom, var(--sky-main6) 0%, hsl(238, 26%, 55%, 1.0) 50%, hsl(336, 43%, 66%, 1.0) 100%);
+    --sky7: linear-gradient(to bottom, var(--sky-main7) 0%, hsl(242, 31%, 63%, 1.0) 60%, hsl(326, 58%, 80%, 1.0) 100%); 
+    --sky8: linear-gradient(to bottom, var(--sky-main8) 0%, hsl(1, 59%, 81%, 1.0) 100%);
+    --sky9: linear-gradient(to bottom, var(--sky-main9) 0%, hsl(197, 100%, 83%, 1.0) 65%, hsl(236, 58%, 81%, 1.0) 100%);
+    --sky10: linear-gradient(to bottom, var(--sky-main10) 0%, hsl(198, 100%, 79%, 1.0) 100%);
+    --sky11: linear-gradient(to bottom, var(--sky-main11) 0%, hsl(197, 95%, 69%, 1.0) 100%);
+    --sky12: linear-gradient(to bottom, var(--sky-main12) 0%, hsl(198, 62%, 52%, 1.0) 100%);
+    --sky13: linear-gradient(to bottom, var(--sky-main13) 0%, hsl(206, 65%, 40%, 1.0) 100%);
+    --sky14: linear-gradient(to bottom, var(--sky-main14) 0%, hsl(212, 65%, 34%, 1.0) 100%);
+    --sky15: linear-gradient(to bottom, var(--sky-main15) 0%, hsl(212, 65%, 34%, 1.0) 65%, hsl(195, 18%, 44%, 1.0) 100%);
+    --sky16: linear-gradient(to bottom, var(--sky-main16) 0%, hsl(210, 57%, 34%, 1.0) 50%, hsl(70, 23%, 55%, 1.0) 100%);
+    --sky17: linear-gradient(to bottom, var(--sky-main17) 0%, hsl(145, 10%, 49%, 1.0) 50%, hsl(48, 76%, 64%, 1.0) 100%);
+    --sky18: linear-gradient(to bottom, var(--sky-main18) 0%, hsl(187, 13%, 39%, 1.0) 35%, hsl(47, 69%, 63%, 1.0) 60%, hsl(21, 51%, 46%, 1.0) 100%);
+    --sky19: linear-gradient(to bottom, var(--sky-main19) 0%, hsl(60, 5%, 29%, 1.0) 35%, hsl(28, 63%, 47%, 1.0) 60%, hsl(21, 85%, 39%, 1.0) 75%, hsl(15, 74%, 11%, 1.0) 100%);
+    --sky20: linear-gradient(to bottom, var(--sky-main20) 0%, hsl(201, 69%, 9%, 1.0) 35%, hsl(20, 77%, 31%, 1.0) 75%, hsl(20, 85%, 8%, 1.0) 100%);
+    --sky21: linear-gradient(to bottom, var(--sky-main21) 30%, hsl(18, 78%, 20%, 1.0) 75%, hsl(15, 74%, 11%, 1.0) 100%);
+    --sky22: linear-gradient(to bottom, var(--sky-main22) 50%, hsl(20, 85%, 16%, 1.0) 100%);
+    --sky23: linear-gradient(to bottom, var(--sky-main23) 75%, hsl(23, 100%, 4%, 1.0) 100%);
 }
 
 html{
@@ -61,16 +86,20 @@ h4{
     background: rgba(127.5,127.5,127.5,0.375);
     border: 2.5px solid rgba(255,255,255,0.1);
     backdrop-filter: blur(100px) saturate(200%);
+    -webkit-backdrop-filter: blur(100px) saturate(200%);
     box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2), 0 5px 20px 0 rgba(0,0,0,0.19);
 }
 .background-primary{
     backdrop-filter: brightness(150%);
+    -webkit-backdrop-filter: brightness(150%);
 }
 .background-secondary{
     backdrop-filter: brightness(80%);
+    -webkit-backdrop-filter: brightness(80%);
 }
 .background-tertiary{
     backdrop-filter: brightness(60%);
+    -webkit-backdrop-filter: brightness(60%);
 }
 .text-primary{
     color: rgba(255, 255, 255, 1.0);
