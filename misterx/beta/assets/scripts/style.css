@@ -86,7 +86,11 @@ h6 {
     font-weight: 400;
     font-size: 1.25rem;
 }
-
+input {
+    background: transparent;
+    border: none;
+    padding: 2.5px;
+}
 
 .sky-background {
     width: 100%;
@@ -95,6 +99,7 @@ h6 {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow-y: auto;
 }
 
 
@@ -123,6 +128,9 @@ h6 {
 .text-secondary {
     color: rgba(255, 255, 255, 0.7);
 }
+.text-secondary:focus {
+    color: rgba(255, 255, 255, 1.0);
+}
 .text-tertiary {
     color: rgba(255, 255, 255, 0.3);
 }
@@ -149,7 +157,7 @@ h6 {
 }
 
 .container-primary {
-    margin: 5%;
+    margin: auto 5%;
     padding: 20px;
     border-radius: 30px;
 }
