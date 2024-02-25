@@ -2,7 +2,6 @@
 :root {
     --red: rgb(255, 69, 58);
     --green: rgb(50, 215, 75);
-    --blue: rgb(10, 132, 255);
     --sky-main0: hsl(240, 100%, 2%, 1.0);
     --sky-main1: hsl(244, 89%, 4%, 1.0);
     --sky-main2: hsl(244, 89%, 4%, 1.0);
@@ -65,14 +64,20 @@ html {
     padding: 0;
 }
 
+a {
+    text-decoration: none;
+}
+a:hover div {
+    backdrop-filter: brightness(110%);
+}
 h1 {
     font-weight: 800;
-    font-size: 3rem;
+    font-size: 4.58rem;
     text-align: center;
 }
 h2 {
     font-weight: 700;
-    font-size: 2.25rem;
+    font-size: 2.83rem;
 }
 h3 {
     font-weight: 600;
@@ -89,7 +94,10 @@ h6 {
 input {
     background: transparent;
     border: none;
-    padding: 2.5px;
+    padding: 0.5rem;
+}
+input[type="number"] {
+    width: 5rem;
 }
 
 .sky-background {
@@ -99,16 +107,16 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
 .glass {
     background: rgba(127.5, 127.5, 127.5, 0.375);
-    border: 2.5px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(100px) saturate(200%);
-    -webkit-backdrop-filter: blur(100px) saturate(200%);
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.2), 0 5px 20px 0 rgba(0, 0, 0, 0.19);
+    border: 0.25rem solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10rem) saturate(200%);
+    -webkit-backdrop-filter: blur(10rem) saturate(200%);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2), 0 0.5rem 2rem 0 rgba(0, 0, 0, 0.19);
 }
 .background-primary {
     backdrop-filter: brightness(150%);
@@ -122,11 +130,54 @@ input {
     backdrop-filter: brightness(60%);
     -webkit-backdrop-filter: brightness(60%);
 }
+.background-tertiary-recessed {
+    box-shadow: inset 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+.container-primary {
+    width: 80%;
+    max-height: 90vh;
+    padding: 2rem;
+    border-radius: 3rem;
+}
+.container-secondary {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+.container-tertiary {
+    margin: 1rem 0;
+    padding: 1rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.container-single {
+    border-radius: 1rem;
+}
+.container-top {
+    border-radius: 1rem 0 1rem 0;
+}
+.container-middle {
+    border-radius: 1rem 0 1rem 0;
+}
+.container-bottom {
+    border-radius: 1rem;
+}
+.scrollbox-primary {
+    max-height: 80%;
+    overflow-y: auto;
+}
+
 .text-primary {
     color: rgba(255, 255, 255, 1.0);
 }
+div.text-primary {
+    background-color: rgba(255, 255, 255, 1.0);
+}
 .text-secondary {
     color: rgba(255, 255, 255, 0.7);
+}
+div.text-secondary {
+    background-color: rgba(255, 255, 255, 0.7);
 }
 .text-secondary:focus {
     color: rgba(255, 255, 255, 1.0);
@@ -134,8 +185,25 @@ input {
 .text-tertiary {
     color: rgba(255, 255, 255, 0.3);
 }
-.button-primary {
+.footnote {
+    text-align: center;
+}
 
+.button {
+    text-align: center;
+    margin: 1rem 0;
+    padding: 1rem;
+}
+.button-oc:hover {
+    backdrop-filter: brightness(110%);
+    cursor: pointer;
+}
+.button-primary {
+    background: #fff;
+    color: #000;
+}
+.button-primary:hover {
+    filter: brightness(90%);
 }
 .button-secondary {
     
@@ -146,30 +214,95 @@ input {
 .button-destructive {
     background: var(--red);
 }
+.button-unavailable {
+    backdrop-filter: brightness(95%);
+    -webkit-backdrop-filter: brightness(95%);
+}
 .button-circle {
     border-radius: 100%;
 }
 .button-capsule {
-    border-radius: 20px;
+    border-radius: 2rem;
 }
 .button-roundedrectangle {
-    border-radius: 10px;
+    border-radius: 1rem;
+}
+.button-disclosure-container {
+    width: 1rem;
+    position: absolute;
+    right: 1rem;
+}
+.button-disclosure {
+    height: 0.35rem;
+    border-radius: 1rem;
+}
+.button-disclosure-top {
+    transform: translateY(-0.1rem) rotate(45deg);
+}
+.button-disclosure-bottom {
+    transform: translateY(0.1rem) rotate(-45deg);
+}
+.button-checkmark-container {
+    width: 2rem;
+    margin-right: 1rem;
+}
+.button-checkmark {
+    height: 0.35rem;
+    border-radius: 1rem;
+}
+.button-checkmark-top {
+    width: 1rem;
+    transform: translateX(-0.1rem) translateY(0.6rem) rotate(50deg);
+}
+.button-checkmark-bottom {
+    transform: translateX(0.15rem) translateY(-0.15rem) rotate(-50deg);
+}
+.button-checkmark-top-cross {
+    width: 2rem;
+    transform: translateY(0.2rem) rotate(45deg);
+}
+.button-checkmark-bottom-cross {
+    transform: translateY(-0.15rem) rotate(-45deg);
+}
+.button-toggle-container {
+    width: 6rem;
+    height: 3rem;
+    border-radius: 9.75rem;
+    transition: all 0.5s ease-in-out;
+    cursor: pointer;
+}
+.button-toggle-container.true {
+    background-color: var(--green);
+}
+.button-toggle {
+    position: relative;
+    width: 2.5rem;
+    height: 2.5rem;
+    background: #fff;
+    border-radius: 10rem;
+    top: 0.25rem;
+    left: 0.25rem;
+    transition: all 0.5s ease-in-out;
+    box-shadow: 0 0.25rem 0.5rem 0 rgba(0, 0, 0, 0.2);
+}
+.button-toggle.true {
+    transform: translateX(3.2rem);
+    left: auto;
 }
 
-.container-primary {
-    margin: auto 5%;
-    padding: 20px;
-    border-radius: 30px;
+.settings-container-main-close {
+    display: none;
 }
-.container-secondary {
-    margin: 10px 0;
-    padding: 10px;
-    border-radius: 10px;
+.settings-container {
+    display: none;
 }
-.container-tertiary {
-    margin: 5px 0;
+.settings-container-open {
+    display: block;
 }
-
-.footnote {
-    text-align: center;
+.settings-container input {
+    border-radius: 0.5rem;
+    font-size: 1.75rem;
+}
+.settings-container-input {
+    margin: 0 0 0 auto;
 }
