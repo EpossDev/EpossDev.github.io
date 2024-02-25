@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mister X IRL | Fast</title>
+    <title>X | Fast</title>
     <link rel="stylesheet" href="../assets/scripts/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,39 +12,83 @@
 <body>
     <div class="sky-background">
         <div class="glass container-primary">
-            <h1 class="text-primary">MISTER X IRL</h1>
+            <h1 class="text-primary">X IRL</h1>
             <h2 class="text-primary">Version Rapide</h2>
-            <div class="background-secondary container-secondary">
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Nombre d'équipe</h3>
-                    <input type="number" name="numberOfTeams" min="1" max="20" class="background-primary text-secondary" pattern="[0-9]*">
+            <h4 class="text-secondary">Sélectionnez les paramètres de la partie</h4>
+            <div id="settings-container-main">
+                <div class="scrollbox-primary">
+                    <div class="background-secondary container-tertiary container-single button-oc" id="open-settings1">
+                        <div class="button-checkmark-container" id="open-settings1">
+                            <div class="button-checkmark button-checkmark-top text-secondary    button-checkmark-top-cross" id="open-settings1"></div>
+                            <div class="button-checkmark button-checkmark-bottom text-secondary     button-checkmark-bottom-cross" id="open-settings1"></div>
+                        </div>
+                        <h3 class="text-primary" id="open-settings1">Équipes</h3>
+                        <div class="button-disclosure-container" id="open-settings1">
+                            <div class="button-disclosure button-disclosure-top text-secondary" id="open-settings1"></div>
+                            <div class="button-disclosure button-disclosure-bottom text-secondary" id="open-settings1"></div>
+                        </div>
+                    </div>
+                    <div class="background-secondary container-tertiary container-single button-oc" id="open-settings2">
+                        <div class="button-checkmark-container" id="open-settings2">
+                            <div class="button-checkmark button-checkmark-top text-secondary    button-checkmark-top-cross" id="open-settings2"></div>
+                            <div class="button-checkmark button-checkmark-bottom text-secondary     button-checkmark-bottom-cross" id="open-settings2"></div>
+                        </div>
+                        <h3 class="text-primary" id="open-settings2">Partie</h3>
+                        <div class="button-disclosure-container" id="open-settings2">
+                            <div class="button-disclosure button-disclosure-top text-secondary" id="open-settings2"></div>
+                            <div class="button-disclosure button-disclosure-bottom text-secondary" id="open-settings2"></div>
+                        </div>
+                    </div>
+                    <div class="background-secondary container-tertiary container-single button-oc" id=" open-settings3">
+                        <div class="button-checkmark-container" id=" open-settings3">
+                            <div class="button-checkmark button-checkmark-top text-secondary    button-checkmark-top-cross" id=" open-settings3"></div>
+                            <div class="button-checkmark button-checkmark-bottom text-secondary     button-checkmark-bottom-cross" id=" open-settings3"></div>
+                        </div>
+                        <h3 class="text-primary" id=" open-settings3">Discord</h3>
+                        <div class="button-disclosure-container" id=" open-settings3">
+                            <div class="button-disclosure button-disclosure-top text-secondary" id=" open-settings3"></div>
+                            <div class="button-disclosure button-disclosure-bottom text-secondary" id=" open-settings3"></div>
+                        </div>
+                    </div>
+                    <div class="background-secondary container-tertiary container-single button-oc" id="open-settings4">
+                        <h3 class="text-primary" id="open-settings4">Restaurer</h3>
+                        <div class="button-disclosure-container">
+                            <div class="button-disclosure button-disclosure-top text-secondary" id="open-settings4"></div>
+                            <div class="button-disclosure button-disclosure-bottom text-secondary" id="open-settings4"></div>
+                        </div>
+                    </div>
                 </div>
-                <hr>
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Noms des joueurs</h3>
+                <div class="button button-unavailable button-roundedrectangle text-tertiary" id="start">
+                    <h3 id="close-settings1">COMMENCER</h3>
                 </div>
             </div>
-            <div class="background-secondary container-secondary">
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Nombre de tours</h3>
+            
+            <div class="settings-container" id="settings1">
+                <div class="scrollbox-primary">
+                    <div class="background-secondary container-tertiary container-single">
+                        <h3 class="text-primary">Nombres d'équipes</h3>
+                        <input type="number" name="numberOfTeams" min="1" max="20" class="background-tertiary background-tertiary-recessed text-secondary settings-container-input" pattern="[0-9]*">
+                    </div>
                 </div>
-                <hr>
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Directions cardinales</h3>
+                <div class="button button-primary button-roundedrectangle button-oc" id="close-settings1">
+                    <h3 id="close-settings1">ENREGISTRER</h3>
                 </div>
-                <hr>
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Envoi des données vers Discord</h3>
+            </div>
+            <div class="settings-container" id="settings2">
+                <div class="scrollbox-primary">
+                    <div class="background-secondary container-tertiary container-single">
+                        <h3 class="text-primary">Nombres de tours</h3>
+                        <input type="number" name="numberOfTeams" min="1" max="20" class="background-tertiary background-tertiary-recessed text-secondary settings-container-input" pattern="[  0-9]*">
+                    </div>
+                    <div class="background-secondary container-tertiary container-single">
+                        <h3 class="text-primary">Directions cardinales</h3>
+                        <div class="button-toggle-container background-tertiary background-tertiary-recessed settings-container-input true">
+                            <div class="button-toggle true"></div>
+                        </div>
+                    </div>
                 </div>
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Code Webhook</h3>
-                </div>
-                <hr>
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Données des joueurs</h3>
-                </div>
-                <div class="container-tertiary">
-                    <h3 class="text-primary">Données de partie</h3>
+                <div class="button button-primary button-roundedrectangle button-oc" id="close-settings2">
+                    <h3 id="close-settings2">ENREGISTRER</h3>
                 </div>
             </div>
             <h6 class="text-secondary footnote">Application réalisée par Valentin</h6>
