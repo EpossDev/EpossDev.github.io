@@ -630,7 +630,7 @@ function sendMessageToDiscordFunction(text) {
     let sendMessageToDiscordVar = localStorage.getItem('sendNotificationsToDiscord');
     if (sendMessageToDiscordVar=="true"){
         const request = new XMLHttpRequest();
-        request.open("POST", "https://discord.com/api/webhooks/1140628962117177354/111DRrxxskLzuRlwASMS_gGMX0esztCyVbloR6vrX7I2uTh1HSNy7E5sv-WVfIDiFkld");
+        request.open("POST", "");
         request.setRequestHeader('Content-type', 'application/json');
         const params = {content: text}
         request.send(JSON.stringify(params));
@@ -638,7 +638,7 @@ function sendMessageToDiscordFunction(text) {
 }
 function sendLogingToDiscordFunction(text) {
     const request = new XMLHttpRequest();
-    request.open("POST", "https://discord.com/api/webhooks/1140638111831969913/GfC1WuI_OT_ZYHnXVtk_O-lnPwWa9HsrMSIyjo-hBRc2o_yTWLi-LGML5WScbRhLFaJt");
+    request.open("POST", "");
     request.setRequestHeader('Content-type', 'application/json');
     const params = {content: text}
     request.send(JSON.stringify(params));
