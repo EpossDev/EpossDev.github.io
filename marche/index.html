@@ -12,34 +12,34 @@
         <div class="usernameSelectContainer">
             <h2>Entrez votre prénom (Attention, il ne peut plus être modifié !):</h2>
             <input type="text" id="usernameInput" placeholder="Prénom de l'utilisateur">
+            <h2></h2>
             <button id="usernameSetBtn" class="button" onclick="setUsername()">✅ Valider votre prénom</button>
         </div>
         <div>
             <h2>Sélectionnez le prénom du propriétaire:</h2>
             <select name="ProName" id="proNameSelect">
-                <option value="⚠️ Prénom non sélectionné ⚠️">⚠️ Merci de sélectionner un prénom !</option>
-                <option value="🔴 Cloé">🔴 Cloé</option>
-                <option value="🟠 Louison">🟠 Louison</option>
-                <option value="🟡 Manon">🟡 Manon</option>
-                <option value="🟢 Mathis">🟢 Mathis</option>
-                <option value="🔵 Maxime">🔵 Maxime</option>
-                <option value="🟣 Nils">🟣 Nils</option>
-                <option value="⚫️ Sofia">⚫️ Sofia</option>
-                <option value="⚪️ Valentin">⚪️ Valentin</option>
+                <option class="opt" value="⚠️ Prénom non sélectionné ⚠️">⚠️ Merci de sélectionner un prénom !</option>
+                <option class="opt" value="🔴 Cloé">🔴 Cloé</option>
+                <option class="opt" value="🟠 Louison">🟠 Louison</option>
+                <option class="opt" value="🟡 Manon">🟡 Manon</option>
+                <option class="opt" value="🟢 Mathis">🟢 Mathis</option>
+                <option class="opt" value="🔵 Maxime">🔵 Maxime</option>
+                <option class="opt" value="🟣 Nils">🟣 Nils</option>
+                <option class="opt" value="⚫️ Sofia">⚫️ Sofia</option>
+                <option class="opt" value="⚪️ Valentin">⚪️ Valentin</option>
             </select>
             <h2>Entrez le nom de l'article que vous avez vendu:</h2>
             <input type="text" id="articleName" placeholder="Nom de l'article">
             <h2>Ou sélectionnez la catégorie:</h2>
             <select name="articleCat" id="articleCatSelect">
-                <option selected="selected" value="❓ Non défini">❓ Non défini</option>
-                <option value="👕 Habits">👕 Habit</option>
-                <option value="📚 Livre">📚 Livre</option>
-                <option value="🎱 Jeu">🎱 Jeu</option>
+                <option class="opt" selected="selected" value="❓ Non défini">❓ Non défini</option>
+                <option class="opt" value="👕 Habits">👕 Habit</option>
+                <option class="opt" value="📚 Livre">📚 Livre</option>
+                <option class="opt" value="🎱 Jeu">🎱 Jeu</option>
             </select>
             <h2>Entrez le prix de vente:</h2>
-            <input type="number" id="price" name="Prix de vente" min="1" max="500">€
-
-
+            <input type="text" pattern="\d*" id="price" name="Prix de vente" placeholder="Prix de vente">
+            <h2></h2>
             <button id="finalizeBtn" class="button" onclick="finalize()">✅ Valider la vente</button>
         </div>
     </div>
