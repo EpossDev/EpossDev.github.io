@@ -45,8 +45,8 @@ h3 {
     font-size: 2rem;
 }
 
-input, select, .opt, #finalizeBtn {
-	font-size: 4rem;
+input, select, .opt, #finalizeBtn, #usernameSetBtn {
+	font-size: 3.5rem;
 	width: 80%;
 	height: 5rem;
 }
